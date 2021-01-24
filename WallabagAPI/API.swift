@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AppKit
 import KeychainAccess
 
 private let appGroup = "group.de.jandamm.ent.wallabag"
@@ -19,19 +20,22 @@ let decoder = JSONDecoder()
 let encoder = JSONEncoder()
 
 public extension API {
+	enum Error: Swift.Error {
+		case oAuth, http(statusCode: Int), unknown
+	}
 	static func authenticate(credentials: Credentials, password: String, completion: @escaping (Bool) -> Void) {
 		getOAuth(request: OAuth.Request(credentials: credentials, password: password), credentials: credentials) {
 			completion($0 != nil)
 		}
 	}
 
-	static func save(website: Website, completion: @escaping (Bool) -> Void) {
+	static func save(website: Website, completion: @escaping (Result<Void, Error>) -> Void) {
 		getRefreshToken { oAuth in
 			guard
 				let oAuth = oAuth,
 				let url = URL(string: "\(oAuth.credentials.server)/api/entries.json")
 			else {
-				completion(false)
+				completion(.failure(.oAuth))
 				return
 			}
 			
@@ -42,7 +46,14 @@ public extension API {
 			request.httpBody = try! encoder.encode(website)
 
 			session.dataTask(with: request) { _, response, _ in
-				completion((response as? HTTPURLResponse)?.statusCode == 200)
+				switch (response as? HTTPURLResponse)?.statusCode {
+				case let statusCode? where (200 ..< 300).contains(statusCode):
+					completion(.success(()))
+				case let statusCode?:
+					completion(.failure(.http(statusCode: statusCode)))
+				case .none:
+					completion(.failure(.unknown))
+				}
 			}.resume()
 		}
 	}
@@ -52,7 +63,7 @@ public extension API {
 	}
 
 	static func openApp() {
-		// open main app
+		NSWorkspace.shared.open(URL(string: "wallabag://")!)
 	}
 }
 

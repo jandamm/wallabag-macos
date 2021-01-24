@@ -10,12 +10,19 @@ import WallabagAPI
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
 	override func toolbarItemClicked(in window: SFSafariWindow) {
-		// This method will be called when your toolbar item is clicked.
-		NSLog("The extension's toolbar item was clicked")
 		getWebsite(of: window) { website in
 			guard let website = website else { return }
-			API.save(website: website) { success in
-				print(success)
+			API.save(website: website) { result in
+				switch result {
+				case .success:
+					break
+				case .failure(.oAuth):
+					API.openApp()
+				case let .failure(.http(statusCode)):
+					print("Error, statusCode: \(statusCode)")
+				case .failure(.unknown):
+					print("Error.")
+				}
 			}
 		}
 	}
