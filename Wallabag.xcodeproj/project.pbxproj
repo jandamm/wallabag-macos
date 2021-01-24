@@ -28,9 +28,6 @@
 		FD9EE37925BCC453004F3F87 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE37725BCC452004F3F87 /* API.swift */; };
 		FD9EE37A25BCC453004F3F87 /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE37825BCC453004F3F87 /* Website.swift */; };
 		FD9EE38E25BCC599004F3F87 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE38D25BCC599004F3F87 /* Credentials.swift */; };
-		FD9EE39425BCC900004F3F87 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE39325BCC900004F3F87 /* Requests.swift */; };
-		FD9EE39F25BCCD97004F3F87 /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = FD9EE39E25BCCD97004F3F87 /* OAuth2 */; };
-		FD9EE3A525BCCDAB004F3F87 /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = FD9EE3A425BCCDAB004F3F87 /* OAuth2 */; };
 		FD9EE3AD25BD8311004F3F87 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE3AC25BD8311004F3F87 /* Settings.swift */; };
 		FD9EE3B325BD86EC004F3F87 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE3B225BD86EC004F3F87 /* OAuth.swift */; };
 /* End PBXBuildFile section */
@@ -126,7 +123,6 @@
 		FD9EE37725BCC452004F3F87 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FD9EE37825BCC453004F3F87 /* Website.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Website.swift; sourceTree = "<group>"; };
 		FD9EE38D25BCC599004F3F87 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		FD9EE39325BCC900004F3F87 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		FD9EE3AC25BD8311004F3F87 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		FD9EE3B225BD86EC004F3F87 /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +132,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD9EE39F25BCCD97004F3F87 /* OAuth2 in Frameworks */,
 				FD74F5A625BCC170009A12C1 /* KeychainAccess in Frameworks */,
 				FD74F60B25BCC3A1009A12C1 /* libWallabagAPI.a in Frameworks */,
 			);
@@ -161,7 +156,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6AE84525BB755E00649EAA /* Cocoa.framework in Frameworks */,
-				FD9EE3A525BCCDAB004F3F87 /* OAuth2 in Frameworks */,
 				FD74F5A425BCC16A009A12C1 /* KeychainAccess in Frameworks */,
 				FD74F60425BCC394009A12C1 /* libWallabagAPI.a in Frameworks */,
 			);
@@ -267,7 +261,6 @@
 			children = (
 				FD9EE37725BCC452004F3F87 /* API.swift */,
 				FD9EE3AC25BD8311004F3F87 /* Settings.swift */,
-				FD9EE39325BCC900004F3F87 /* Requests.swift */,
 				FD9EE38D25BCC599004F3F87 /* Credentials.swift */,
 				FD9EE37825BCC453004F3F87 /* Website.swift */,
 				FD9EE3B225BD86EC004F3F87 /* OAuth.swift */,
@@ -311,7 +304,6 @@
 			name = Wallabag;
 			packageProductDependencies = (
 				FD74F5A525BCC170009A12C1 /* KeychainAccess */,
-				FD9EE39E25BCCD97004F3F87 /* OAuth2 */,
 			);
 			productName = Wallabag;
 			productReference = FD6AE81725BB755D00649EAA /* Wallabag.app */;
@@ -369,7 +361,6 @@
 			name = "Wallabag Extension";
 			packageProductDependencies = (
 				FD74F5A325BCC16A009A12C1 /* KeychainAccess */,
-				FD9EE3A425BCCDAB004F3F87 /* OAuth2 */,
 			);
 			productName = "Wallabag Extension";
 			productReference = FD6AE83F25BB755E00649EAA /* Wallabag Extension.appex */;
@@ -386,7 +377,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				FD9EE3A725BCCDB6004F3F87 /* PBXTargetDependency */,
 				FD9EE38825BCC4E6004F3F87 /* PBXTargetDependency */,
 			);
 			name = WallabagAPI;
@@ -434,7 +424,6 @@
 			mainGroup = FD6AE80E25BB755D00649EAA;
 			packageReferences = (
 				FD1DA42A25BCA8BB0009CB0E /* XCRemoteSwiftPackageReference "KeychainAccess" */,
-				FD9EE39D25BCCD97004F3F87 /* XCRemoteSwiftPackageReference "OAuth2" */,
 			);
 			productRefGroup = FD6AE81825BB755D00649EAA /* Products */;
 			projectDirPath = "";
@@ -528,7 +517,6 @@
 				FD9EE37925BCC453004F3F87 /* API.swift in Sources */,
 				FD74F5FC25BCC36D009A12C1 /* WallabagAPI.m in Sources */,
 				FD9EE38E25BCC599004F3F87 /* Credentials.swift in Sources */,
-				FD9EE39425BCC900004F3F87 /* Requests.swift in Sources */,
 				FD9EE37A25BCC453004F3F87 /* Website.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,10 +552,6 @@
 		FD9EE38825BCC4E6004F3F87 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = FD9EE38725BCC4E6004F3F87 /* KeychainAccess */;
-		};
-		FD9EE3A725BCCDB6004F3F87 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = FD9EE3A625BCCDB6004F3F87 /* OAuth2 */;
 		};
 /* End PBXTargetDependency section */
 
@@ -989,14 +973,6 @@
 				minimumVersion = 4.2.1;
 			};
 		};
-		FD9EE39D25BCCD97004F3F87 /* XCRemoteSwiftPackageReference "OAuth2" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/p2/OAuth2.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.3.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1014,21 +990,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FD1DA42A25BCA8BB0009CB0E /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
-		};
-		FD9EE39E25BCCD97004F3F87 /* OAuth2 */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FD9EE39D25BCCD97004F3F87 /* XCRemoteSwiftPackageReference "OAuth2" */;
-			productName = OAuth2;
-		};
-		FD9EE3A425BCCDAB004F3F87 /* OAuth2 */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FD9EE39D25BCCD97004F3F87 /* XCRemoteSwiftPackageReference "OAuth2" */;
-			productName = OAuth2;
-		};
-		FD9EE3A625BCCDB6004F3F87 /* OAuth2 */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FD9EE39D25BCCD97004F3F87 /* XCRemoteSwiftPackageReference "OAuth2" */;
-			productName = OAuth2;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
