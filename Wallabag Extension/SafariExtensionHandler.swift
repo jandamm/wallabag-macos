@@ -6,28 +6,40 @@
 //
 
 import SafariServices
+import WallabagAPI
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
-    
-    override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
-        // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
-        page.getPropertiesWithCompletionHandler { properties in
-            NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
-        }
-    }
+	override func toolbarItemClicked(in window: SFSafariWindow) {
+		// This method will be called when your toolbar item is clicked.
+		NSLog("The extension's toolbar item was clicked")
+		getWebsite(of: window) { website in
+			guard let website = website else { return }
+			API.save(website: website) { success in
+				print(success)
+			}
+		}
+	}
 
-    override func toolbarItemClicked(in window: SFSafariWindow) {
-        // This method will be called when your toolbar item is clicked.
-        NSLog("The extension's toolbar item was clicked")
-    }
-    
-    override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
-        // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
-        validationHandler(true, "")
-    }
-    
-    override func popoverViewController() -> SFSafariExtensionViewController {
-        return SafariExtensionViewController.shared
-    }
+	override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
+		// This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
+		getWebsite(of: window) {
+			validationHandler($0 != nil, "")
+		}
+	}
 
+	override func popoverViewController() -> SFSafariExtensionViewController {
+		return SafariExtensionViewController.shared
+	}
+}
+
+private func getWebsite(of window: SFSafariWindow, callback: @escaping (Website?) -> Void) {
+	window.getActiveTab {
+		$0?.getActivePage {
+			$0?.getPropertiesWithCompletionHandler { properties in
+				callback(
+					properties?.url.map { Website(url: $0, title: properties?.title) }
+				)
+			}
+		}
+	}
 }

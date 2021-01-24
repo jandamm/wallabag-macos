@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,9 +17,22 @@
 		FD6AE84525BB755E00649EAA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6AE84425BB755E00649EAA /* Cocoa.framework */; };
 		FD6AE84825BB755E00649EAA /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AE84725BB755E00649EAA /* SafariExtensionHandler.swift */; };
 		FD6AE84A25BB755E00649EAA /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AE84925BB755E00649EAA /* SafariExtensionViewController.swift */; };
-		FD6AE84D25BB755E00649EAA /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = FD6AE84C25BB755E00649EAA /* script.js */; };
 		FD6AE84F25BB755E00649EAA /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FD6AE84E25BB755E00649EAA /* ToolbarItemIcon.pdf */; };
 		FD6AE85225BB755E00649EAA /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6AE85025BB755E00649EAA /* SafariExtensionViewController.xib */; };
+		FD74F5A425BCC16A009A12C1 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FD74F5A325BCC16A009A12C1 /* KeychainAccess */; };
+		FD74F5A625BCC170009A12C1 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FD74F5A525BCC170009A12C1 /* KeychainAccess */; };
+		FD74F5FA25BCC36D009A12C1 /* WallabagAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = FD74F5F925BCC36D009A12C1 /* WallabagAPI.h */; };
+		FD74F5FC25BCC36D009A12C1 /* WallabagAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FD74F5FB25BCC36D009A12C1 /* WallabagAPI.m */; };
+		FD74F60425BCC394009A12C1 /* libWallabagAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */; };
+		FD74F60B25BCC3A1009A12C1 /* libWallabagAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */; };
+		FD9EE37925BCC453004F3F87 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE37725BCC452004F3F87 /* API.swift */; };
+		FD9EE37A25BCC453004F3F87 /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE37825BCC453004F3F87 /* Website.swift */; };
+		FD9EE38E25BCC599004F3F87 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE38D25BCC599004F3F87 /* Credentials.swift */; };
+		FD9EE39425BCC900004F3F87 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE39325BCC900004F3F87 /* Requests.swift */; };
+		FD9EE39F25BCCD97004F3F87 /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = FD9EE39E25BCCD97004F3F87 /* OAuth2 */; };
+		FD9EE3A525BCCDAB004F3F87 /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = FD9EE3A425BCCDAB004F3F87 /* OAuth2 */; };
+		FD9EE3AD25BD8311004F3F87 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE3AC25BD8311004F3F87 /* Settings.swift */; };
+		FD9EE3B325BD86EC004F3F87 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE3B225BD86EC004F3F87 /* OAuth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +57,33 @@
 			remoteGlobalIDString = FD6AE83E25BB755E00649EAA;
 			remoteInfo = "Wallabag Extension";
 		};
+		FD74F60525BCC394009A12C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD6AE80F25BB755D00649EAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD74F5F625BCC36D009A12C1;
+			remoteInfo = WallabagAPI;
+		};
+		FD74F60C25BCC3A1009A12C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD6AE80F25BB755D00649EAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD74F5F625BCC36D009A12C1;
+			remoteInfo = WallabagAPI;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		FD1DA46925BCBCA50009CB0E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD6AE85A25BB755E00649EAA /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,11 +115,20 @@
 		FD6AE84425BB755E00649EAA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FD6AE84725BB755E00649EAA /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
 		FD6AE84925BB755E00649EAA /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
-		FD6AE84C25BB755E00649EAA /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		FD6AE84E25BB755E00649EAA /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		FD6AE85125BB755E00649EAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		FD6AE85325BB755E00649EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD6AE85425BB755E00649EAA /* Wallabag_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wallabag_Extension.entitlements; sourceTree = "<group>"; };
+		FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWallabagAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD74F5F925BCC36D009A12C1 /* WallabagAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallabagAPI.h; sourceTree = "<group>"; };
+		FD74F5FB25BCC36D009A12C1 /* WallabagAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallabagAPI.m; sourceTree = "<group>"; };
+		FD9EE37625BCC452004F3F87 /* WallabagAPI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WallabagAPI-Bridging-Header.h"; sourceTree = "<group>"; };
+		FD9EE37725BCC452004F3F87 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FD9EE37825BCC453004F3F87 /* Website.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Website.swift; sourceTree = "<group>"; };
+		FD9EE38D25BCC599004F3F87 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		FD9EE39325BCC900004F3F87 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		FD9EE3AC25BD8311004F3F87 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		FD9EE3B225BD86EC004F3F87 /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +136,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD9EE39F25BCCD97004F3F87 /* OAuth2 in Frameworks */,
+				FD74F5A625BCC170009A12C1 /* KeychainAccess in Frameworks */,
+				FD74F60B25BCC3A1009A12C1 /* libWallabagAPI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +161,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6AE84525BB755E00649EAA /* Cocoa.framework in Frameworks */,
+				FD9EE3A525BCCDAB004F3F87 /* OAuth2 in Frameworks */,
+				FD74F5A425BCC16A009A12C1 /* KeychainAccess in Frameworks */,
+				FD74F60425BCC394009A12C1 /* libWallabagAPI.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD74F5F525BCC36D009A12C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +184,7 @@
 				FD6AE82C25BB755E00649EAA /* WallabagTests */,
 				FD6AE83725BB755E00649EAA /* WallabagUITests */,
 				FD6AE84625BB755E00649EAA /* Wallabag Extension */,
+				FD74F5F825BCC36D009A12C1 /* WallabagAPI */,
 				FD6AE84325BB755E00649EAA /* Frameworks */,
 				FD6AE81825BB755D00649EAA /* Products */,
 			);
@@ -137,6 +197,7 @@
 				FD6AE82925BB755E00649EAA /* WallabagTests.xctest */,
 				FD6AE83425BB755E00649EAA /* WallabagUITests.xctest */,
 				FD6AE83F25BB755E00649EAA /* Wallabag Extension.appex */,
+				FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,13 +257,39 @@
 		FD6AE84B25BB755E00649EAA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FD6AE84C25BB755E00649EAA /* script.js */,
 				FD6AE84E25BB755E00649EAA /* ToolbarItemIcon.pdf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		FD74F5F825BCC36D009A12C1 /* WallabagAPI */ = {
+			isa = PBXGroup;
+			children = (
+				FD9EE37725BCC452004F3F87 /* API.swift */,
+				FD9EE3AC25BD8311004F3F87 /* Settings.swift */,
+				FD9EE39325BCC900004F3F87 /* Requests.swift */,
+				FD9EE38D25BCC599004F3F87 /* Credentials.swift */,
+				FD9EE37825BCC453004F3F87 /* Website.swift */,
+				FD9EE3B225BD86EC004F3F87 /* OAuth.swift */,
+				FD74F5F925BCC36D009A12C1 /* WallabagAPI.h */,
+				FD74F5FB25BCC36D009A12C1 /* WallabagAPI.m */,
+				FD9EE37625BCC452004F3F87 /* WallabagAPI-Bridging-Header.h */,
+			);
+			path = WallabagAPI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FD74F5F325BCC36D009A12C1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD74F5FA25BCC36D009A12C1 /* WallabagAPI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		FD6AE81625BB755D00649EAA /* Wallabag */ = {
@@ -213,13 +300,19 @@
 				FD6AE81425BB755D00649EAA /* Frameworks */,
 				FD6AE81525BB755D00649EAA /* Resources */,
 				FD6AE85A25BB755E00649EAA /* Embed App Extensions */,
+				FD1DA46925BCBCA50009CB0E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				FD6AE84225BB755E00649EAA /* PBXTargetDependency */,
+				FD74F60D25BCC3A1009A12C1 /* PBXTargetDependency */,
 			);
 			name = Wallabag;
+			packageProductDependencies = (
+				FD74F5A525BCC170009A12C1 /* KeychainAccess */,
+				FD9EE39E25BCCD97004F3F87 /* OAuth2 */,
+			);
 			productName = Wallabag;
 			productReference = FD6AE81725BB755D00649EAA /* Wallabag.app */;
 			productType = "com.apple.product-type.application";
@@ -271,11 +364,35 @@
 			buildRules = (
 			);
 			dependencies = (
+				FD74F60625BCC394009A12C1 /* PBXTargetDependency */,
 			);
 			name = "Wallabag Extension";
+			packageProductDependencies = (
+				FD74F5A325BCC16A009A12C1 /* KeychainAccess */,
+				FD9EE3A425BCCDAB004F3F87 /* OAuth2 */,
+			);
 			productName = "Wallabag Extension";
 			productReference = FD6AE83F25BB755E00649EAA /* Wallabag Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		FD74F5F625BCC36D009A12C1 /* WallabagAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD74F5FD25BCC36D009A12C1 /* Build configuration list for PBXNativeTarget "WallabagAPI" */;
+			buildPhases = (
+				FD74F5F325BCC36D009A12C1 /* Headers */,
+				FD74F5F425BCC36D009A12C1 /* Sources */,
+				FD74F5F525BCC36D009A12C1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD9EE3A725BCCDB6004F3F87 /* PBXTargetDependency */,
+				FD9EE38825BCC4E6004F3F87 /* PBXTargetDependency */,
+			);
+			name = WallabagAPI;
+			productName = WallabagAPI;
+			productReference = FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -283,7 +400,7 @@
 		FD6AE80F25BB755D00649EAA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					FD6AE81625BB755D00649EAA = {
@@ -300,6 +417,10 @@
 					FD6AE83E25BB755E00649EAA = {
 						CreatedOnToolsVersion = 12.3;
 					};
+					FD74F5F625BCC36D009A12C1 = {
+						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
+					};
 				};
 			};
 			buildConfigurationList = FD6AE81225BB755D00649EAA /* Build configuration list for PBXProject "Wallabag" */;
@@ -311,6 +432,10 @@
 				Base,
 			);
 			mainGroup = FD6AE80E25BB755D00649EAA;
+			packageReferences = (
+				FD1DA42A25BCA8BB0009CB0E /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				FD9EE39D25BCCD97004F3F87 /* XCRemoteSwiftPackageReference "OAuth2" */,
+			);
 			productRefGroup = FD6AE81825BB755D00649EAA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -319,6 +444,7 @@
 				FD6AE82825BB755E00649EAA /* WallabagTests */,
 				FD6AE83325BB755E00649EAA /* WallabagUITests */,
 				FD6AE83E25BB755E00649EAA /* Wallabag Extension */,
+				FD74F5F625BCC36D009A12C1 /* WallabagAPI */,
 			);
 		};
 /* End PBXProject section */
@@ -353,7 +479,6 @@
 			files = (
 				FD6AE85225BB755E00649EAA /* SafariExtensionViewController.xib in Resources */,
 				FD6AE84F25BB755E00649EAA /* ToolbarItemIcon.pdf in Resources */,
-				FD6AE84D25BB755E00649EAA /* script.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +519,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FD74F5F425BCC36D009A12C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9EE3AD25BD8311004F3F87 /* Settings.swift in Sources */,
+				FD9EE3B325BD86EC004F3F87 /* OAuth.swift in Sources */,
+				FD9EE37925BCC453004F3F87 /* API.swift in Sources */,
+				FD74F5FC25BCC36D009A12C1 /* WallabagAPI.m in Sources */,
+				FD9EE38E25BCC599004F3F87 /* Credentials.swift in Sources */,
+				FD9EE39425BCC900004F3F87 /* Requests.swift in Sources */,
+				FD9EE37A25BCC453004F3F87 /* Website.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -411,6 +550,24 @@
 			isa = PBXTargetDependency;
 			target = FD6AE83E25BB755E00649EAA /* Wallabag Extension */;
 			targetProxy = FD6AE84125BB755E00649EAA /* PBXContainerItemProxy */;
+		};
+		FD74F60625BCC394009A12C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD74F5F625BCC36D009A12C1 /* WallabagAPI */;
+			targetProxy = FD74F60525BCC394009A12C1 /* PBXContainerItemProxy */;
+		};
+		FD74F60D25BCC3A1009A12C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD74F5F625BCC36D009A12C1 /* WallabagAPI */;
+			targetProxy = FD74F60C25BCC3A1009A12C1 /* PBXContainerItemProxy */;
+		};
+		FD9EE38825BCC4E6004F3F87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FD9EE38725BCC4E6004F3F87 /* KeychainAccess */;
+		};
+		FD9EE3A725BCCDB6004F3F87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = FD9EE3A625BCCDB6004F3F87 /* OAuth2 */;
 		};
 /* End PBXTargetDependency section */
 
@@ -485,7 +642,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -540,7 +697,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -553,8 +710,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Wallabag Extension/Wallabag_Extension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 362C7752P3;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Wallabag Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -564,6 +721,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.ent.Wallabag.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -573,8 +731,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Wallabag Extension/Wallabag_Extension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 362C7752P3;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Wallabag Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -584,6 +742,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.ent.Wallabag.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -596,18 +755,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Wallabag/Wallabag.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 362C7752P3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Wallabag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.ent.Wallabag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -619,18 +778,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Wallabag/Wallabag.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 362C7752P3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Wallabag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.ent.Wallabag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -640,9 +799,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 362C7752P3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WallabagTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -652,6 +811,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.ent.WallabagTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wallabag.app/Contents/MacOS/Wallabag";
 			};
@@ -662,9 +822,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 362C7752P3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WallabagTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -674,6 +834,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.ent.WallabagTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wallabag.app/Contents/MacOS/Wallabag";
 			};
@@ -683,9 +844,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 362C7752P3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WallabagUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -694,6 +855,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.ent.WallabagUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Wallabag;
 			};
@@ -703,9 +865,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 362C7752P3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WallabagUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -714,8 +876,48 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.ent.WallabagUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Wallabag;
+			};
+			name = Release;
+		};
+		FD74F5FE25BCC36D009A12C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 362C7752P3;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "WallabagAPI/WallabagAPI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FD74F5FF25BCC36D009A12C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 362C7752P3;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "WallabagAPI/WallabagAPI-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -767,7 +969,68 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		FD74F5FD25BCC36D009A12C1 /* Build configuration list for PBXNativeTarget "WallabagAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD74F5FE25BCC36D009A12C1 /* Debug */,
+				FD74F5FF25BCC36D009A12C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FD1DA42A25BCA8BB0009CB0E /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.1;
+			};
+		};
+		FD9EE39D25BCCD97004F3F87 /* XCRemoteSwiftPackageReference "OAuth2" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/p2/OAuth2.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FD74F5A325BCC16A009A12C1 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD1DA42A25BCA8BB0009CB0E /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		FD74F5A525BCC170009A12C1 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD1DA42A25BCA8BB0009CB0E /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		FD9EE38725BCC4E6004F3F87 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD1DA42A25BCA8BB0009CB0E /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		FD9EE39E25BCCD97004F3F87 /* OAuth2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD9EE39D25BCCD97004F3F87 /* XCRemoteSwiftPackageReference "OAuth2" */;
+			productName = OAuth2;
+		};
+		FD9EE3A425BCCDAB004F3F87 /* OAuth2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD9EE39D25BCCD97004F3F87 /* XCRemoteSwiftPackageReference "OAuth2" */;
+			productName = OAuth2;
+		};
+		FD9EE3A625BCCDB6004F3F87 /* OAuth2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD9EE39D25BCCD97004F3F87 /* XCRemoteSwiftPackageReference "OAuth2" */;
+			productName = OAuth2;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FD6AE80F25BB755D00649EAA /* Project object */;
 }
