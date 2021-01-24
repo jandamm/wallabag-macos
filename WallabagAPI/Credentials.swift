@@ -7,21 +7,29 @@
 
 import Foundation
 
-public struct Credentials: Codable {
-	let server: String
-	let clientId: String
-	let clientSecret: String
-	let username: String
+extension API {
+	public struct Credentials: Codable {
+		public let server: URL
+		public let clientId: String
+		public let clientSecret: String
+		public let username: String
 
-	public init(
-		server: String,
-		clientId: String,
-		clientSecret: String,
-		username: String
-	) {
-		self.server = server
-		self.clientId = clientId
-		self.clientSecret = clientSecret
-		self.username = username
+		public init?(
+			server: String,
+			clientId: String,
+			clientSecret: String,
+			username: String
+		) {
+			self.server = URL(string: server)!
+			self.clientId = clientId
+			self.clientSecret = clientSecret
+			self.username = username
+		}
+	}
+}
+
+public extension API.Credentials {
+	static var current: API.Credentials? {
+		API.oAuth?.credentials
 	}
 }

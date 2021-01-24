@@ -13,8 +13,4 @@ public extension API {
 
 public extension API.Settings {
 	static var quickSave: Bool { true }
-
-	static var server: URL? {
-		nil
-	}
 }

@@ -8,6 +8,7 @@
 import Foundation
 
 struct OAuth: Codable  {
+	typealias Credentials = API.Credentials
 	static let key: String = "oauth"
 	let credentials: Credentials
 	let token: Token

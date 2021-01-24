@@ -26,7 +26,7 @@ public extension API {
 	}
 
 	static func save(website: Website, completion: @escaping (Bool) -> Void) {
-		refreshTokenIfNeeded { oAuth in
+		getRefreshToken { oAuth in
 			guard
 				let oAuth = oAuth,
 				let url = URL(string: "\(oAuth.credentials.server)/api/entries.json")
@@ -45,6 +45,10 @@ public extension API {
 				completion((response as? HTTPURLResponse)?.statusCode == 200)
 			}.resume()
 		}
+	}
+
+	static func refreshTokenIfNeeded(completion: @escaping (Bool) -> Void) {
+		getRefreshToken { completion($0 != nil) }
 	}
 
 	static func openApp() {
@@ -68,7 +72,7 @@ extension API {
 		}
 	}
 
-	static func refreshTokenIfNeeded(completion: @escaping (OAuth?) -> Void) {
+	static func getRefreshToken(completion: @escaping (OAuth?) -> Void) {
 		guard let auth = oAuth, auth.isExpired else {
 			completion(oAuth)
 			return
