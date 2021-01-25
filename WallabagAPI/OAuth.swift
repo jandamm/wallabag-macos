@@ -14,12 +14,10 @@ struct OAuth: Codable  {
 	let token: Token
 	let date: Date
 
-	func request() -> Request {
-		Request(oAuth: self)
-	}
-
-	func authorize(request: inout URLRequest) {
+	func request(for pathComponent: String) -> URLRequest {
+		var request = URLRequest(url: credentials.server.appendingPathComponent(pathComponent))
 		request.addValue("Bearer \(token.access_token)", forHTTPHeaderField: "Authorization")
+		return request
 	}
 
 	struct Token: Codable {

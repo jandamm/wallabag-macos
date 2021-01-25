@@ -11,7 +11,9 @@ import SafariServices.SFSafariExtensionManager
 import WallabagAPI
 
 let appName = "Wallabag"
-let extensionBundleIdentifier = "de.jandamm.ent.Wallabag.Extension"
+let extensionBundleIdentifier = (Bundle.main.infoDictionary?["CFBundleIdentifier"]).map {
+	"\($0).Extension"
+} ?? "de.jandamm.ent.Wallabag.Extension"
 
 class ViewController: NSViewController {
 
@@ -28,7 +30,7 @@ class ViewController: NSViewController {
 		super.viewDidLoad()
 
 		self.appNameLabel.stringValue = "\(appName)'s extension is currently unknown."
-		self.authLabel.stringValue = "Checking the credentials."
+		self.authLabel.stringValue = AuthLabel.checking
 
 		let credentials = API.Credentials.current
 		self.serverTextField.stringValue = credentials?.server.absoluteString ?? "https://app.wallabag.it"
@@ -53,8 +55,8 @@ class ViewController: NSViewController {
 		}
 	}
 
-	@IBAction private func validateCredentials(_ sender: AnyObject?) {
-		authLabel.stringValue = "Checking credentials."
+	@IBAction private func validateCredentials(_ sender: NSButton?) {
+		authLabel.stringValue = AuthLabel.checking
 		guard
 			let credentials = API.Credentials(
 				server: serverTextField.stringValue,
@@ -63,7 +65,7 @@ class ViewController: NSViewController {
 				username: usernameTextField.stringValue
 			),
 			!passwordTextField.stringValue.isEmpty else {
-			authLabel.stringValue = "Please check your input and try again."
+			authLabel.stringValue = AuthLabel.error
 			return
 		}
 		API.authenticate(credentials: credentials, password: passwordTextField.stringValue) { success in
@@ -76,7 +78,7 @@ class ViewController: NSViewController {
 		}
 	}
 	
-	@IBAction private func openSafariExtensionPreferences(_ sender: AnyObject?) {
+	@IBAction private func openSafariExtensionPreferences(_ sender: NSButton?) {
 		SFSafariApplication.showPreferencesForExtension(withIdentifier: extensionBundleIdentifier) { error in
 			guard error == nil else { return }
 
@@ -88,7 +90,14 @@ class ViewController: NSViewController {
 
 	private func setAuthResponse(_ success: Bool) {
 		self.authLabel.stringValue = success
-			? "You have valid credentials."
-			: "Please enter your credentials."
+			? AuthLabel.valid
+			: AuthLabel.userInput
 	}
+}
+
+private enum AuthLabel {
+	static let valid = "You have valid credentials."
+	static let userInput = "Please enter your credentials."
+	static let error = "Please check your input and try again."
+	static let checking = "Checking credentials."
 }

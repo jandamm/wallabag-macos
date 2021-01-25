@@ -175,10 +175,9 @@
 			isa = PBXGroup;
 			children = (
 				FD6AE81925BB755D00649EAA /* Wallabag */,
-				FD6AE82C25BB755E00649EAA /* WallabagTests */,
-				FD6AE83725BB755E00649EAA /* WallabagUITests */,
 				FD6AE84625BB755E00649EAA /* Wallabag Extension */,
 				FD74F5F825BCC36D009A12C1 /* WallabagAPI */,
+				FDCB8E0F25C055AD0012007B /* Tests */,
 				FD6AE84325BB755E00649EAA /* Frameworks */,
 				FD6AE81825BB755D00649EAA /* Products */,
 			);
@@ -269,6 +268,15 @@
 				FD9EE37625BCC452004F3F87 /* WallabagAPI-Bridging-Header.h */,
 			);
 			path = WallabagAPI;
+			sourceTree = "<group>";
+		};
+		FDCB8E0F25C055AD0012007B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FD6AE82C25BB755E00649EAA /* WallabagTests */,
+				FD6AE83725BB755E00649EAA /* WallabagUITests */,
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
