@@ -8,11 +8,11 @@
 import Foundation
 
 public struct Website: Encodable {
-	let url: URL
-	let title: String?
+	public let url: URL
+	public let title: String?
 	var tags: String?
-	var archive: Int = 0
-	var starred: Int = 0
+	public var archive: Archive = .unread
+	public var starred: Starred = .unstarred
 
 	public init(url: URL, title: String?) {
 		self.url = url
@@ -24,13 +24,11 @@ public struct Website: Encodable {
 		set { tags = newValue.joined(separator: ",") }
 	}
 
-	public var isArchived: Bool {
-		get { archive == 1 }
-		set { archive = newValue ? 1 : 0 }
+	public enum Archive: Int, Encodable {
+		case unread, archive
 	}
 
-	public var isStarred: Bool {
-		get { starred == 1 }
-		set { starred = newValue ? 1 : 0 }
+	public enum Starred: Int, Encodable {
+		case unstarred, starred
 	}
 }
