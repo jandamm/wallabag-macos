@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FD6AE83E25BB755E00649EAA"
-               BuildableName = "Wallabag Extension.appex"
-               BlueprintName = "Wallabag Extension"
+               BuildableName = "Safari Extension.appex"
+               BlueprintName = "Safari Extension"
                ReferencedContainer = "container:Wallabag.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

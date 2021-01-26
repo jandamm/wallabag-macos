@@ -6,7 +6,7 @@
 //
 
 import SafariServices
-import WallabagAPI
+import Wallabag
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
 	override func toolbarItemClicked(in window: SFSafariWindow) {

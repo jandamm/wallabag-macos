@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Wallabag
+@testable import App
 
 class WallabagTests: XCTestCase {
 
