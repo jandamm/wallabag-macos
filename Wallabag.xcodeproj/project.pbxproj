@@ -16,9 +16,7 @@
 		FD6AE84025BB755E00649EAA /* Wallabag Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FD6AE83F25BB755E00649EAA /* Wallabag Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FD6AE84525BB755E00649EAA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6AE84425BB755E00649EAA /* Cocoa.framework */; };
 		FD6AE84825BB755E00649EAA /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AE84725BB755E00649EAA /* SafariExtensionHandler.swift */; };
-		FD6AE84A25BB755E00649EAA /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AE84925BB755E00649EAA /* SafariExtensionViewController.swift */; };
 		FD6AE84F25BB755E00649EAA /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FD6AE84E25BB755E00649EAA /* ToolbarItemIcon.pdf */; };
-		FD6AE85225BB755E00649EAA /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6AE85025BB755E00649EAA /* SafariExtensionViewController.xib */; };
 		FD74F5A425BCC16A009A12C1 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FD74F5A325BCC16A009A12C1 /* KeychainAccess */; };
 		FD74F5A625BCC170009A12C1 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FD74F5A525BCC170009A12C1 /* KeychainAccess */; };
 		FD74F5FA25BCC36D009A12C1 /* WallabagAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = FD74F5F925BCC36D009A12C1 /* WallabagAPI.h */; };
@@ -111,9 +109,7 @@
 		FD6AE83F25BB755E00649EAA /* Wallabag Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Wallabag Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6AE84425BB755E00649EAA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FD6AE84725BB755E00649EAA /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
-		FD6AE84925BB755E00649EAA /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		FD6AE84E25BB755E00649EAA /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
-		FD6AE85125BB755E00649EAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		FD6AE85325BB755E00649EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD6AE85425BB755E00649EAA /* Wallabag_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wallabag_Extension.entitlements; sourceTree = "<group>"; };
 		FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWallabagAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,8 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				FD6AE84725BB755E00649EAA /* SafariExtensionHandler.swift */,
-				FD6AE84925BB755E00649EAA /* SafariExtensionViewController.swift */,
-				FD6AE85025BB755E00649EAA /* SafariExtensionViewController.xib */,
 				FD6AE85325BB755E00649EAA /* Info.plist */,
 				FD6AE85425BB755E00649EAA /* Wallabag_Extension.entitlements */,
 				FD6AE84B25BB755E00649EAA /* Resources */,
@@ -474,7 +468,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD6AE85225BB755E00649EAA /* SafariExtensionViewController.xib in Resources */,
 				FD6AE84F25BB755E00649EAA /* ToolbarItemIcon.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,7 +504,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD6AE84A25BB755E00649EAA /* SafariExtensionViewController.swift in Sources */,
 				FD6AE84825BB755E00649EAA /* SafariExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,14 +562,6 @@
 				FD6AE81E25BB755D00649EAA /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FD6AE85025BB755E00649EAA /* SafariExtensionViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD6AE85125BB755E00649EAA /* Base */,
-			);
-			name = SafariExtensionViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

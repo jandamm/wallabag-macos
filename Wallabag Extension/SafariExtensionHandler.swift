@@ -12,16 +12,27 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 	override func toolbarItemClicked(in window: SFSafariWindow) {
 		getWebsite(of: window) { website in
 			guard let website = website else { return }
-			API.save(website: website) { result in
-				switch result {
-				case .success:
-					break
-				case .failure(.oAuth):
-					API.openApp()
-				case let .failure(.http(statusCode)):
-					print("Error, statusCode: \(statusCode)")
-				case .failure(.unknown):
-					print("Error.")
+			window.getToolbarItem { item in
+				item?.setBadgeText("...")
+				API.save(website: website) { result in
+					switch result {
+					case .success:
+						item?.setBadgeText(
+							API.Settings.showSuccessMessage
+							? "Ok"
+							: nil
+						)
+					case .failure(.oAuth):
+						API.openApp()
+					case let .failure(.http(statusCode)):
+						item?.setBadgeText("E\(statusCode)")
+					case .failure(.unknown):
+						item?.setBadgeText("Error")
+					}
+
+					DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+						item?.setBadgeText(nil)
+					}
 				}
 			}
 		}

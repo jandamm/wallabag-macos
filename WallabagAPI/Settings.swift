@@ -12,5 +12,8 @@ public extension API {
 }
 
 public extension API.Settings {
-	static var quickSave: Bool { true }
+	static var showSuccessMessage: Bool {
+		get { defaults.bool(forKey: "showSuccessMessage") }
+		set { defaults.setValue(newValue, forKey: "showSuccessMessage") }
+	}
 }
