@@ -14,7 +14,9 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 			guard let website = website else { return }
 			window.getToolbarItem { item in
 				item?.setBadgeText("...")
+				item?.setEnabled(false)
 				API.save(website: website) { result in
+					item?.setEnabled(true)
 					switch result {
 					case .success:
 						item?.setBadgeText(
