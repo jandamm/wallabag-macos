@@ -8,12 +8,12 @@
 import Cocoa
 import SafariServices.SFSafariApplication
 import SafariServices.SFSafariExtensionManager
-import WallabagAPI
+import Wallabag
 
 let appName = "Wallabag"
 let extensionBundleIdentifier = (Bundle.main.infoDictionary?["CFBundleIdentifier"]).map {
-	"\($0).Extension"
-} ?? "de.jandamm.ent.Wallabag.Extension"
+	"\($0).SafariQuickSave"
+} ?? "de.jandamm.ent.Wallabag.SafariQuickSave"
 
 class ViewController: NSViewController {
 
