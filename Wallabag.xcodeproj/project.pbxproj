@@ -15,13 +15,13 @@
 		FD6AE84025BB755E00649EAA /* Safari Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FD6AE83F25BB755E00649EAA /* Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FD6AE84525BB755E00649EAA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6AE84425BB755E00649EAA /* Cocoa.framework */; };
 		FD6AE84825BB755E00649EAA /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AE84725BB755E00649EAA /* SafariExtensionHandler.swift */; };
-		FD6AE84F25BB755E00649EAA /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FD6AE84E25BB755E00649EAA /* ToolbarItemIcon.pdf */; };
 		FD74F5A425BCC16A009A12C1 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FD74F5A325BCC16A009A12C1 /* KeychainAccess */; };
 		FD74F5A625BCC170009A12C1 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FD74F5A525BCC170009A12C1 /* KeychainAccess */; };
 		FD74F5FA25BCC36D009A12C1 /* WallabagAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = FD74F5F925BCC36D009A12C1 /* WallabagAPI.h */; };
 		FD74F5FC25BCC36D009A12C1 /* WallabagAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FD74F5FB25BCC36D009A12C1 /* WallabagAPI.m */; };
 		FD74F60425BCC394009A12C1 /* libWallabagAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */; };
 		FD74F60B25BCC3A1009A12C1 /* libWallabagAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */; };
+		FD9EBA0925C2048800B6CEDA /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FD9EBA0825C2048800B6CEDA /* ToolbarItemIcon.pdf */; };
 		FD9EE37925BCC453004F3F87 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE37725BCC452004F3F87 /* API.swift */; };
 		FD9EE37A25BCC453004F3F87 /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE37825BCC453004F3F87 /* Website.swift */; };
 		FD9EE38E25BCC599004F3F87 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE38D25BCC599004F3F87 /* Credentials.swift */; };
@@ -98,12 +98,12 @@
 		FD6AE83F25BB755E00649EAA /* Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6AE84425BB755E00649EAA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FD6AE84725BB755E00649EAA /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
-		FD6AE84E25BB755E00649EAA /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		FD6AE85325BB755E00649EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD6AE85425BB755E00649EAA /* Wallabag_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wallabag_Extension.entitlements; sourceTree = "<group>"; };
 		FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWallabagAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD74F5F925BCC36D009A12C1 /* WallabagAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallabagAPI.h; sourceTree = "<group>"; };
 		FD74F5FB25BCC36D009A12C1 /* WallabagAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallabagAPI.m; sourceTree = "<group>"; };
+		FD9EBA0825C2048800B6CEDA /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		FD9EE37625BCC452004F3F87 /* WallabagAPI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WallabagAPI-Bridging-Header.h"; sourceTree = "<group>"; };
 		FD9EE37725BCC452004F3F87 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FD9EE37825BCC453004F3F87 /* Website.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Website.swift; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 		FD6AE84B25BB755E00649EAA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FD6AE84E25BB755E00649EAA /* ToolbarItemIcon.pdf */,
+				FD9EBA0825C2048800B6CEDA /* ToolbarItemIcon.pdf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -401,7 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD6AE84F25BB755E00649EAA /* ToolbarItemIcon.pdf in Resources */,
+				FD9EBA0925C2048800B6CEDA /* ToolbarItemIcon.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
