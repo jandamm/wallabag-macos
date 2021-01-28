@@ -4,11 +4,10 @@ import KeychainAccess
 
 private let teamIdentifier = "6N9Z26P656"
 private let bundleIdentifier = "de.jandamm.pri.wallabag"
-private let appGroup = "group.\(bundleIdentifier)"
-let defaults = UserDefaults(suiteName: appGroup)!
+let defaults = UserDefaults(suiteName: "group.\(bundleIdentifier)")!
 let keychain = Keychain(
-	service: "it.wallabag",
-	accessGroup: appGroup
+	service: "\(bundleIdentifier).SharedKeychain",
+	accessGroup: "\(teamIdentifier).\(bundleIdentifier).SharedKeychain"
 )
 .synchronizable(true)
 
@@ -72,14 +71,14 @@ extension API {
 	// TODO: Improve logic and add caching?
 	static var oAuth: OAuth? {
 		get {
-			(try? keychain.getData(OAuth.key))
+			(try? keychain.getData(OAuth.key, ignoringAttributeSynchronizable: false))
 				.flatMap { try? decoder.decode(OAuth.self, from: $0) }
 		}
 		set {
 			if let data = try? newValue.map(encoder.encode) {
-				try? keychain.set(data, key: OAuth.key)
+				try? keychain.set(data, key: OAuth.key, ignoringAttributeSynchronizable: false)
 			} else {
-				try? keychain.remove(OAuth.key)
+				try? keychain.remove(OAuth.key, ignoringAttributeSynchronizable: false)
 			}
 		}
 	}
