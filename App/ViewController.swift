@@ -9,6 +9,7 @@ import Cocoa
 import SafariServices.SFSafariApplication
 import SafariServices.SFSafariExtensionManager
 import Wallabag
+import UI
 
 let appName = "Wallabag"
 let extensionBundleIdentifier = (Bundle.main.infoDictionary?["CFBundleIdentifier"]).map {
@@ -18,11 +19,11 @@ let extensionBundleIdentifier = (Bundle.main.infoDictionary?["CFBundleIdentifier
 class ViewController: NSViewController {
 
 	@IBOutlet private var authLabel: NSTextField!
-	@IBOutlet private var serverTextField: NSTextField!
-	@IBOutlet private var clientIdTextField: NSTextField!
-	@IBOutlet private var clientSecretTextField: NSTextField!
-	@IBOutlet private var usernameTextField: NSTextField!
-	@IBOutlet private var passwordTextField: NSTextField!
+	@IBOutlet private var serverTextField: TextField!
+	@IBOutlet private var clientIdTextField: TextField!
+	@IBOutlet private var clientSecretTextField: TextField!
+	@IBOutlet private var usernameTextField: TextField!
+	@IBOutlet private var passwordTextField: SecureTextField!
 
 	@IBOutlet private var appNameLabel: NSTextField!
 
