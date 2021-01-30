@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD3632F325C575EF004AA740 /* UI.h in Headers */ = {isa = PBXBuildFile; fileRef = FD3632F225C575EF004AA740 /* UI.h */; };
+		FD3632F525C575EF004AA740 /* UI.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3632F425C575EF004AA740 /* UI.m */; };
+		FD3632FF25C575FE004AA740 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3632FE25C575FE004AA740 /* TextField.swift */; };
+		FD36332325C57A66004AA740 /* libUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3632F025C575EF004AA740 /* libUI.a */; };
 		FD6AE81C25BB755D00649EAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AE81B25BB755D00649EAA /* AppDelegate.swift */; };
 		FD6AE81F25BB755D00649EAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6AE81D25BB755D00649EAA /* Main.storyboard */; };
 		FD6AE82125BB755D00649EAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AE82025BB755D00649EAA /* ViewController.swift */; };
@@ -30,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FD36332425C57A66004AA740 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD6AE80F25BB755D00649EAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD3632EF25C575EF004AA740;
+			remoteInfo = UI;
+		};
 		FD6AE82A25BB755E00649EAA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FD6AE80F25BB755D00649EAA /* Project object */;
@@ -85,6 +96,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FD3632F025C575EF004AA740 /* libUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD3632F225C575EF004AA740 /* UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
+		FD3632F425C575EF004AA740 /* UI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI.m; sourceTree = "<group>"; };
+		FD3632FD25C575FD004AA740 /* UI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UI-Bridging-Header.h"; sourceTree = "<group>"; };
+		FD3632FE25C575FE004AA740 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		FD6AE81725BB755D00649EAA /* Wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6AE81A25BB755D00649EAA /* Wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wallabag.entitlements; sourceTree = "<group>"; };
 		FD6AE81B25BB755D00649EAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,10 +129,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FD3632EE25C575EF004AA740 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD6AE81425BB755D00649EAA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD36332325C57A66004AA740 /* libUI.a in Frameworks */,
 				FD74F5A625BCC170009A12C1 /* KeychainAccess in Frameworks */,
 				FD74F60B25BCC3A1009A12C1 /* libWallabagAPI.a in Frameworks */,
 			);
@@ -149,6 +173,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD3632F125C575EF004AA740 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FD3632F225C575EF004AA740 /* UI.h */,
+				FD3632F425C575EF004AA740 /* UI.m */,
+				FD3632FE25C575FE004AA740 /* TextField.swift */,
+				FD3632FD25C575FD004AA740 /* UI-Bridging-Header.h */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		FD6AE80E25BB755D00649EAA = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +191,7 @@
 				FD6AE84625BB755E00649EAA /* Safari QuickSave Extension */,
 				FD74F5F825BCC36D009A12C1 /* Wallabag */,
 				FD6AE82C25BB755E00649EAA /* AppTests */,
+				FD3632F125C575EF004AA740 /* UI */,
 				FD6AE84325BB755E00649EAA /* Frameworks */,
 				FD6AE81825BB755D00649EAA /* Products */,
 			);
@@ -168,6 +204,7 @@
 				FD6AE82925BB755E00649EAA /* WallabagTests.xctest */,
 				FD6AE83F25BB755E00649EAA /* Safari Extension.appex */,
 				FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */,
+				FD3632F025C575EF004AA740 /* libUI.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,6 +276,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		FD3632EC25C575EF004AA740 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD3632F325C575EF004AA740 /* UI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD74F5F325BCC36D009A12C1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,6 +295,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		FD3632EF25C575EF004AA740 /* UI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD3632F825C575EF004AA740 /* Build configuration list for PBXNativeTarget "UI" */;
+			buildPhases = (
+				FD3632EC25C575EF004AA740 /* Headers */,
+				FD3632ED25C575EF004AA740 /* Sources */,
+				FD3632EE25C575EF004AA740 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UI;
+			productName = UI;
+			productReference = FD3632F025C575EF004AA740 /* libUI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		FD6AE81625BB755D00649EAA /* Wallabag */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD6AE85B25BB755E00649EAA /* Build configuration list for PBXNativeTarget "Wallabag" */;
@@ -265,6 +327,7 @@
 			dependencies = (
 				FD6AE84225BB755E00649EAA /* PBXTargetDependency */,
 				FD74F60D25BCC3A1009A12C1 /* PBXTargetDependency */,
+				FD36332525C57A66004AA740 /* PBXTargetDependency */,
 			);
 			name = Wallabag;
 			packageProductDependencies = (
@@ -340,6 +403,10 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					FD3632EF25C575EF004AA740 = {
+						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
+					};
 					FD6AE81625BB755D00649EAA = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -376,6 +443,7 @@
 				FD6AE82825BB755E00649EAA /* WallabagTests */,
 				FD6AE83E25BB755E00649EAA /* Safari Extension */,
 				FD74F5F625BCC36D009A12C1 /* WallabagAPI */,
+				FD3632EF25C575EF004AA740 /* UI */,
 			);
 		};
 /* End PBXProject section */
@@ -408,6 +476,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FD3632ED25C575EF004AA740 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD3632F525C575EF004AA740 /* UI.m in Sources */,
+				FD3632FF25C575FE004AA740 /* TextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD6AE81325BB755D00649EAA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -449,6 +526,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FD36332525C57A66004AA740 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD3632EF25C575EF004AA740 /* UI */;
+			targetProxy = FD36332425C57A66004AA740 /* PBXContainerItemProxy */;
+		};
 		FD6AE82B25BB755E00649EAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FD6AE81625BB755D00649EAA /* Wallabag */;
@@ -487,6 +569,45 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FD3632F625C575EF004AA740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N9Z26P656;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UI/UI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FD3632F725C575EF004AA740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N9Z26P656;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UI/UI-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		FD6AE85525BB755E00649EAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -786,6 +907,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FD3632F825C575EF004AA740 /* Build configuration list for PBXNativeTarget "UI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD3632F625C575EF004AA740 /* Debug */,
+				FD3632F725C575EF004AA740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FD6AE81225BB755D00649EAA /* Build configuration list for PBXProject "Wallabag" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
