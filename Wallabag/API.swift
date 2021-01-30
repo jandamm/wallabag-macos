@@ -1,17 +1,16 @@
-//
-//  API.swift
-//  WallabagAPI
-//
-//  Created by Jan Dammshäuser on 23.01.21.
-//
-
-import Foundation
 import AppKit
+import Foundation
 import KeychainAccess
 
-private let appGroup = "group.de.jandamm.ent.wallabag"
+private let teamIdentifier = "6N9Z26P656"
+private let bundleIdentifier = "de.jandamm.pri.wallabag"
+private let appGroup = "group.\(bundleIdentifier)"
 let defaults = UserDefaults(suiteName: appGroup)!
-let keychain = Keychain(service: "it.wallabag", accessGroup: appGroup)
+let keychain = Keychain(
+	service: "it.wallabag",
+	accessGroup: appGroup
+)
+.synchronizable(true)
 
 public enum API {}
 
@@ -23,6 +22,7 @@ public extension API {
 	enum Error: Swift.Error {
 		case oAuth, http(statusCode: Int), unknown
 	}
+
 	static func authenticate(credentials: Credentials, password: String, completion: @escaping (Bool) -> Void) {
 		getOAuth(request: OAuth.Request(credentials: credentials, password: password), credentials: credentials) {
 			completion($0 != nil)
@@ -99,7 +99,7 @@ extension API {
 			request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 			request.httpBody = try encoder.encode(oAuthRequest)
 
-			session.dataTask(with: request) { data, response, error in
+			session.dataTask(with: request) { data, _, _ in
 				oAuth = data
 					.flatMap { try? decoder.decode(OAuth.Token.self, from: $0) }
 					.map { OAuth(credentials: credentials, token: $0, date: Date()) }
