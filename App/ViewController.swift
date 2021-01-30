@@ -12,9 +12,8 @@ import Wallabag
 import UI
 
 let appName = "Wallabag"
-let extensionBundleIdentifier = (Bundle.main.infoDictionary?["CFBundleIdentifier"]).map {
-	"\($0).SafariQuickSave"
-} ?? "de.jandamm.ent.Wallabag.SafariQuickSave"
+let bundleIndentifier = Bundle.main.infoDictionary?["CFBundleIdentifier"] ?? "de.jandamm.pri.wallabag"
+let extensionBundleIdentifier = "\(bundleIndentifier).SafariQuickSave"
 
 class ViewController: NSViewController {
 

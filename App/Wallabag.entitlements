@@ -6,7 +6,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.de.jandamm.ent.wallabag</string>
+		<string>group.de.jandamm.pri.wallabag</string>
 	</array>
 	<key>com.apple.security.files.user-selected.read-only</key>
 	<true/>
