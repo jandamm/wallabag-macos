@@ -319,6 +319,7 @@
 				FD6AE81325BB755D00649EAA /* Sources */,
 				FD6AE81425BB755D00649EAA /* Frameworks */,
 				FD6AE81525BB755D00649EAA /* Resources */,
+				FDB9DB2A25C9E3B10096C6C7 /* Set Version */,
 				FD6AE85A25BB755E00649EAA /* Embed App Extensions */,
 				FD1DA46925BCBCA50009CB0E /* Embed Frameworks */,
 			);
@@ -362,6 +363,7 @@
 				FD6AE83B25BB755E00649EAA /* Sources */,
 				FD6AE83C25BB755E00649EAA /* Frameworks */,
 				FD6AE83D25BB755E00649EAA /* Resources */,
+				FDB9DB2B25C9E4250096C6C7 /* Set Version */,
 			);
 			buildRules = (
 			);
@@ -474,6 +476,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FDB9DB2A25C9E3B10096C6C7 /* Set Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Set Version";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./scripts/build_number.sh app\n";
+		};
+		FDB9DB2B25C9E4250096C6C7 /* Set Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Set Version";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./scripts/build_number.sh appex\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FD3632ED25C575EF004AA740 /* Sources */ = {
