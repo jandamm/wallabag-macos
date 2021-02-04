@@ -12,5 +12,9 @@
 	<true/>
 	<key>com.apple.security.network.client</key>
 	<true/>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)de.jandamm.pri.wallabag.SharedKeychain</string>
+	</array>
 </dict>
 </plist>
