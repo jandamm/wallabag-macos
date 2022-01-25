@@ -11,6 +11,9 @@
 		FD3632F525C575EF004AA740 /* UI.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3632F425C575EF004AA740 /* UI.m */; };
 		FD3632FF25C575FE004AA740 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3632FE25C575FE004AA740 /* TextField.swift */; };
 		FD36332325C57A66004AA740 /* libUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3632F025C575EF004AA740 /* libUI.a */; };
+		FD494C6C266AC42E00EE5C4A /* AppCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494C6A266AC42B00EE5C4A /* AppCredentials.swift */; };
+		FD494C6D266AC43000EE5C4A /* AppCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494C6A266AC42B00EE5C4A /* AppCredentials.swift */; };
+		FD494C6E266AC43100EE5C4A /* AppCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494C6A266AC42B00EE5C4A /* AppCredentials.swift */; };
 		FD6AE81C25BB755D00649EAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AE81B25BB755D00649EAA /* AppDelegate.swift */; };
 		FD6AE81F25BB755D00649EAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6AE81D25BB755D00649EAA /* Main.storyboard */; };
 		FD6AE82125BB755D00649EAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AE82025BB755D00649EAA /* ViewController.swift */; };
@@ -101,7 +104,8 @@
 		FD3632F425C575EF004AA740 /* UI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI.m; sourceTree = "<group>"; };
 		FD3632FD25C575FD004AA740 /* UI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UI-Bridging-Header.h"; sourceTree = "<group>"; };
 		FD3632FE25C575FE004AA740 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		FD6AE81725BB755D00649EAA /* Wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD494C6A266AC42B00EE5C4A /* AppCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCredentials.swift; sourceTree = "<group>"; };
+		FD6AE81725BB755D00649EAA /* Wallamac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallamac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6AE81A25BB755D00649EAA /* Wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wallabag.entitlements; sourceTree = "<group>"; };
 		FD6AE81B25BB755D00649EAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD6AE81E25BB755D00649EAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		FD6AE80E25BB755D00649EAA = {
 			isa = PBXGroup;
 			children = (
+				FD494C6A266AC42B00EE5C4A /* AppCredentials.swift */,
 				FD6AE81925BB755D00649EAA /* App */,
 				FD6AE84625BB755E00649EAA /* Safari QuickSave Extension */,
 				FD74F5F825BCC36D009A12C1 /* Wallabag */,
@@ -200,7 +205,7 @@
 		FD6AE81825BB755D00649EAA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD6AE81725BB755D00649EAA /* Wallabag.app */,
+				FD6AE81725BB755D00649EAA /* Wallamac.app */,
 				FD6AE82925BB755E00649EAA /* WallabagTests.xctest */,
 				FD6AE83F25BB755E00649EAA /* Safari Extension.appex */,
 				FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */,
@@ -335,7 +340,7 @@
 				FD74F5A525BCC170009A12C1 /* KeychainAccess */,
 			);
 			productName = Wallabag;
-			productReference = FD6AE81725BB755D00649EAA /* Wallabag.app */;
+			productReference = FD6AE81725BB755D00649EAA /* Wallamac.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FD6AE82825BB755E00649EAA /* WallabagTests */ = {
@@ -530,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD494C6C266AC42E00EE5C4A /* AppCredentials.swift in Sources */,
 				FD6AE82125BB755D00649EAA /* ViewController.swift in Sources */,
 				FD6AE81C25BB755D00649EAA /* AppDelegate.swift in Sources */,
 			);
@@ -547,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD494C6D266AC43000EE5C4A /* AppCredentials.swift in Sources */,
 				FD6AE84825BB755E00649EAA /* SafariExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +567,7 @@
 				FD9EE37925BCC453004F3F87 /* API.swift in Sources */,
 				FD74F5FC25BCC36D009A12C1 /* WallabagAPI.m in Sources */,
 				FD9EE38E25BCC599004F3F87 /* Credentials.swift in Sources */,
+				FD494C6E266AC43100EE5C4A /* AppCredentials.swift in Sources */,
 				FD9EE37A25BCC453004F3F87 /* Website.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -771,7 +779,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Safari QuickSave Extension/Wallabag_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6N9Z26P656;
+				DEVELOPMENT_TEAM = 7TCLF98BX7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Safari QuickSave Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -779,7 +787,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.pri.wallabag.SafariQuickSave;
+				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac.safari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -794,7 +802,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Safari QuickSave Extension/Wallabag_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6N9Z26P656;
+				DEVELOPMENT_TEAM = 7TCLF98BX7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Safari QuickSave Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -802,7 +810,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.pri.wallabag.SafariQuickSave;
+				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac.safari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -820,7 +828,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6N9Z26P656;
+				DEVELOPMENT_TEAM = 7TCLF98BX7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -828,9 +836,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.pri.wallabag;
+				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac;
 				PRODUCT_MODULE_NAME = App;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wallamac;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -846,7 +854,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6N9Z26P656;
+				DEVELOPMENT_TEAM = 7TCLF98BX7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -854,9 +862,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.pri.wallabag;
+				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac;
 				PRODUCT_MODULE_NAME = App;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wallamac;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1012,7 +1020,7 @@
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.2.1;
+				minimumVersion = 4.2.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

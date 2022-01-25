@@ -6,11 +6,15 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.de.jandamm.pri.wallabag</string>
+		<string>group.de.jandamm.wallabagmac</string>
 	</array>
 	<key>com.apple.security.files.user-selected.read-only</key>
 	<true/>
 	<key>com.apple.security.network.client</key>
 	<true/>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)de.jandamm.wallabagmac.SharedKeychain</string>
+	</array>
 </dict>
 </plist>

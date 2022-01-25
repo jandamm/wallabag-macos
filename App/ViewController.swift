@@ -11,10 +11,6 @@ import SafariServices.SFSafariExtensionManager
 import Wallabag
 import UI
 
-let appName = "Wallabag"
-let bundleIndentifier = Bundle.main.infoDictionary?["CFBundleIdentifier"] ?? "de.jandamm.pri.wallabag"
-let extensionBundleIdentifier = "\(bundleIndentifier).SafariQuickSave"
-
 class ViewController: NSViewController {
 
 	@IBOutlet private var authLabel: NSTextField!
@@ -29,14 +25,15 @@ class ViewController: NSViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		self.appNameLabel.stringValue = "\(appName)'s extension is currently unknown."
+		self.appNameLabel.stringValue = "\(AppCredentials.appName)'s extension is currently unknown."
 		self.authLabel.stringValue = AuthLabel.checking
 
 		let credentials = API.Credentials.current
 		self.serverTextField.stringValue = credentials?.server.absoluteString ?? "https://app.wallabag.it"
-		self.clientIdTextField.stringValue = credentials?.clientId ?? ""
-		self.clientSecretTextField.stringValue = credentials?.clientSecret ?? ""
-		self.usernameTextField.stringValue = credentials?.username ?? ""
+		self.clientIdTextField.stringValue = credentials?.clientId ?? "14354_5qrutno26p8ogkwgwkow800040owwwwkg4oc4ko0s8cws0s88s"
+		self.clientSecretTextField.stringValue = credentials?.clientSecret ?? "2umird08j0ys80wkw8kokoc8gc08wk8skcccsoo40g4oowssws"
+		self.usernameTextField.stringValue = credentials?.username ?? "jandam"
+		self.passwordTextField.stringValue = "clod7PSUP-lirn9tooy"
 
 		API.refreshTokenIfNeeded { success in
 			DispatchQueue.main.async {
@@ -44,13 +41,15 @@ class ViewController: NSViewController {
 			}
 		}
 
-		SFSafariExtensionManager.getStateOfSafariExtension(withIdentifier: extensionBundleIdentifier) { (state, error) in
+		SFSafariExtensionManager.getStateOfSafariExtension(
+			withIdentifier: AppCredentials.safariBundleIdentifier
+		) { (state, error) in
 			guard let state = state, error == nil else { return }
 
 			DispatchQueue.main.async {
 				self.appNameLabel.stringValue = state.isEnabled
-					? "\(appName)'s extension is currently on."
-					: "\(appName)'s extension is currently off. You can turn it on in Safari Extensions preferences."
+					? "\(AppCredentials.appName)'s extension is currently on."
+					: "\(AppCredentials.appName)'s extension is currently off. You can turn it on in Safari Extensions preferences."
 			}
 		}
 	}
@@ -68,6 +67,7 @@ class ViewController: NSViewController {
 			authLabel.stringValue = AuthLabel.error
 			return
 		}
+
 		API.authenticate(credentials: credentials, password: passwordTextField.stringValue) { success in
 			DispatchQueue.main.async {
 				self.setAuthResponse(success)
@@ -79,7 +79,9 @@ class ViewController: NSViewController {
 	}
 	
 	@IBAction private func openSafariExtensionPreferences(_ sender: NSButton?) {
-		SFSafariApplication.showPreferencesForExtension(withIdentifier: extensionBundleIdentifier) { error in
+		SFSafariApplication.showPreferencesForExtension(
+			withIdentifier: AppCredentials.safariBundleIdentifier
+		) { error in
 			guard error == nil else { return }
 
 			DispatchQueue.main.async {

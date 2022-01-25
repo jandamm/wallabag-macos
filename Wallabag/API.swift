@@ -2,13 +2,10 @@ import AppKit
 import Foundation
 import KeychainAccess
 
-private let teamIdentifier = "6N9Z26P656"
-private let bundleIdentifier = "de.jandamm.pri.wallabag"
-private let appGroup = "group.\(bundleIdentifier)"
-let defaults = UserDefaults(suiteName: appGroup)!
+let defaults = UserDefaults(suiteName: AppCredentials.userDefaultsGroup)!
 let keychain = Keychain(
-	service: "it.wallabag",
-	accessGroup: appGroup
+	service: AppCredentials.keychainService,
+	accessGroup: AppCredentials.keychainAccessGroup
 )
 .synchronizable(true)
 
