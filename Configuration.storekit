@@ -1,0 +1,63 @@
+{
+  "identifier" : "DDD59DC6",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "9D9BC597",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "Small Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "de.jandamm.wallamac.tip1",
+      "referenceName" : "Tip1",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "29C0B9D8",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "Generous Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "de.jandamm.wallamac.tip2",
+      "referenceName" : "Tip2",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "E7FCFD53",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "Awesome Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "de.jandamm.wallamac.tip3",
+      "referenceName" : "Tip3",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 2
+  }
+}

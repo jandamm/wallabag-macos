@@ -11,7 +11,14 @@ import SafariServices.SFSafariExtensionManager
 import Wallabag
 import UI
 
+private let freeToUse = "This App is free to use. But in order to keep it in the AppStore I need to pay a yearly fee."
 class ViewController: NSViewController {
+
+	@IBOutlet private var tipStackView: NSStackView!
+	@IBOutlet private var tipLabel: NSTextField!
+	@IBOutlet private var tipButton: NSButton!
+
+	@IBOutlet private var thankYouView: NSView!
 
 	@IBOutlet private var authLabel: NSTextField!
 	@IBOutlet private var serverTextField: TextField!
@@ -19,11 +26,24 @@ class ViewController: NSViewController {
 	@IBOutlet private var clientSecretTextField: TextField!
 	@IBOutlet private var usernameTextField: TextField!
 	@IBOutlet private var passwordTextField: SecureTextField!
+	@IBOutlet private var validateCredentialsButton: NSButton!
 
 	@IBOutlet private var appNameLabel: NSTextField!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		if #available(macOS 12.0, *) {
+			Task {
+				tipStackView.isHidden = (await Tip.fetch()).isEmpty
+			}
+
+			setTippingState()
+		} else {
+			tipStackView.isHidden = true
+		}
+
+		validateCredentialsButton.becomeFirstResponder()
 
 		self.appNameLabel.stringValue = "\(AppCredentials.appName)'s extension is currently unknown."
 		self.authLabel.stringValue = AuthLabel.checking
@@ -94,6 +114,28 @@ class ViewController: NSViewController {
 		self.authLabel.stringValue = success
 			? AuthLabel.valid
 			: AuthLabel.userInput
+	}
+
+	@available(macOS 12.0, *)
+	private func setTippingState() {
+			if !Tip.previousTips.isEmpty {
+				thankYouView.isHidden = false
+				tipLabel.stringValue = freeToUse
+				tipButton.title = "Tip again"
+			} else {
+				tipLabel.stringValue = "\(freeToUse)\nIt would be nice if you consider giving a tip."
+				tipButton.title = "Give a Tip"
+			}
+	}
+
+	override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+		super.prepare(for: segue, sender: sender)
+		if #available(macOS 12.0, *) {
+			guard let tip = segue.destinationController as? TipViewController else { return }
+			tip.onSuccess = { [weak self] in
+				self?.setTippingState()
+			}
+		}
 	}
 }
 

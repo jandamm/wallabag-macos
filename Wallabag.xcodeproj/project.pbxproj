@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A77D27752819D6C000D89E82 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D27742819D6BF00D89E82 /* TipViewController.swift */; };
+		A77D2777281A791600D89E82 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D2776281A791600D89E82 /* Tip.swift */; };
+		A7B43DC9281ABA4900B4CDA7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */; };
 		FD3632F325C575EF004AA740 /* UI.h in Headers */ = {isa = PBXBuildFile; fileRef = FD3632F225C575EF004AA740 /* UI.h */; };
 		FD3632F525C575EF004AA740 /* UI.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3632F425C575EF004AA740 /* UI.m */; };
 		FD3632FF25C575FE004AA740 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3632FE25C575FE004AA740 /* TextField.swift */; };
@@ -99,6 +102,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A77D27742819D6BF00D89E82 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
+		A77D2776281A791600D89E82 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
+		A77D2778281A804200D89E82 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FD3632F025C575EF004AA740 /* libUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD3632F225C575EF004AA740 /* UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
 		FD3632F425C575EF004AA740 /* UI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI.m; sourceTree = "<group>"; };
@@ -147,6 +154,7 @@
 				FD36332325C57A66004AA740 /* libUI.a in Frameworks */,
 				FD74F5A625BCC170009A12C1 /* KeychainAccess in Frameworks */,
 				FD74F60B25BCC3A1009A12C1 /* libWallabagAPI.a in Frameworks */,
+				A7B43DC9281ABA4900B4CDA7 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +199,7 @@
 		FD6AE80E25BB755D00649EAA = {
 			isa = PBXGroup;
 			children = (
+				A77D2778281A804200D89E82 /* Configuration.storekit */,
 				FD494C6A266AC42B00EE5C4A /* AppCredentials.swift */,
 				FD6AE81925BB755D00649EAA /* App */,
 				FD6AE84625BB755E00649EAA /* Safari QuickSave Extension */,
@@ -221,6 +230,8 @@
 				FD6AE81B25BB755D00649EAA /* AppDelegate.swift */,
 				FD6AE81D25BB755D00649EAA /* Main.storyboard */,
 				FD6AE82025BB755D00649EAA /* ViewController.swift */,
+				A77D27742819D6BF00D89E82 /* TipViewController.swift */,
+				A77D2776281A791600D89E82 /* Tip.swift */,
 				FD6AE82225BB755E00649EAA /* Assets.xcassets */,
 				FD6AE82425BB755E00649EAA /* Info.plist */,
 			);
@@ -239,6 +250,7 @@
 		FD6AE84325BB755E00649EAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */,
 				FD6AE84425BB755E00649EAA /* Cocoa.framework */,
 			);
 			name = Frameworks;
@@ -537,6 +549,8 @@
 			files = (
 				FD494C6C266AC42E00EE5C4A /* AppCredentials.swift in Sources */,
 				FD6AE82125BB755D00649EAA /* ViewController.swift in Sources */,
+				A77D2777281A791600D89E82 /* Tip.swift in Sources */,
+				A77D27752819D6C000D89E82 /* TipViewController.swift in Sources */,
 				FD6AE81C25BB755D00649EAA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
