@@ -787,6 +787,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				MARKETING_VERSION = 2022.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac.safari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -810,6 +811,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				MARKETING_VERSION = 2022.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac.safari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -835,7 +837,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2022.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac;
 				PRODUCT_MODULE_NAME = App;
 				PRODUCT_NAME = Wallamac;
@@ -861,7 +863,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2022.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac;
 				PRODUCT_MODULE_NAME = App;
 				PRODUCT_NAME = Wallamac;

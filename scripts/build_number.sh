@@ -12,7 +12,7 @@ dir="$(cd "$dir" ; pwd -P )"
 
 # Use the commit count before HEAD as CFBundleVersion
 head_date="$("${GIT}" show -s --format=%cI)"
-INFO_BUILD="$("${GIT}" rev-list --all --before "$head_date" | wc -l | tr -d ' ')"
+INFO_BUILD="$("${GIT}" rev-list --before "$head_date" head | wc -l | tr -d ' ')"
 
 # Use the last annotated 'develop' tag as CFBundleShortVersionString
 version=$("${GIT}" tag --merged HEAD --list 'v*' --sort=v:refname | tail -n 1)
@@ -26,7 +26,7 @@ fi
 if [ -x "$PlistBuddy" ]; then
 	if [ -f "${INFO_PLIST}" ]; then
 		$PlistBuddy -c "Set :CFBundleVersion ${INFO_BUILD}" "${INFO_PLIST}"
-		$PlistBuddy -c "Set :CFBundleShortVersionString ${INFO_VERSION}" "${INFO_PLIST}"
+		# $PlistBuddy -c "Set :CFBundleShortVersionString ${INFO_VERSION}" "${INFO_PLIST}"
 		$PlistBuddy -c "Save" "${INFO_PLIST}"
 	else
 		echo "error: ${INFO_PLIST} was not present"
