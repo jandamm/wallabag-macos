@@ -1,5 +1,5 @@
 enum AppCredentials {
-	static let appName = "Wallamac"
+	static let appName = "Wallabag QuickSave"
 	static let bundleIdentifier = "de.jandamm.wallabagmac"
 	static let safariBundleIdentifier = "de.jandamm.wallabagmac.safari"
 	static let teamIdentifier = "7TCLF98BX7"

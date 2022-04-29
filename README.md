@@ -1,4 +1,4 @@
-# Wallamac
+# Wallabag QuickSave
 
 This is a macOS app which allows you to save links directly from Safari to a
 Wallabag instance. I plan to add a Share Extension in the future as well.

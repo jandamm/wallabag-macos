@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Wallamac does not collect any data by its own. Only data explicitly shared by
+Wallabag QuickSave does not collect any data by its own. Only data explicitly shared by
 the user is processed.
 This only happens when the user is sharing a link via the app.
 
@@ -17,7 +17,7 @@ No data is processed by any third party except your chosen Wallabag instance.
 
 ## How we collect data
 
-Wallamac does not collect data itself. Data is only forwarded to your selected
+Wallabag QuickSave does not collect data itself. Data is only forwarded to your selected
 Wallabag instance.
 
 As with all apps in the Apple AppStore some crash reports may be collected.

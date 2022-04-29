@@ -112,7 +112,7 @@
 		FD3632FD25C575FD004AA740 /* UI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UI-Bridging-Header.h"; sourceTree = "<group>"; };
 		FD3632FE25C575FE004AA740 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		FD494C6A266AC42B00EE5C4A /* AppCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCredentials.swift; sourceTree = "<group>"; };
-		FD6AE81725BB755D00649EAA /* Wallamac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallamac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD6AE81725BB755D00649EAA /* Wallabag QuickSave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wallabag QuickSave.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6AE81A25BB755D00649EAA /* Wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wallabag.entitlements; sourceTree = "<group>"; };
 		FD6AE81B25BB755D00649EAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD6AE81E25BB755D00649EAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 		FD6AE81825BB755D00649EAA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD6AE81725BB755D00649EAA /* Wallamac.app */,
+				FD6AE81725BB755D00649EAA /* Wallabag QuickSave.app */,
 				FD6AE82925BB755E00649EAA /* WallabagTests.xctest */,
 				FD6AE83F25BB755E00649EAA /* Safari Extension.appex */,
 				FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */,
@@ -352,7 +352,7 @@
 				FD74F5A525BCC170009A12C1 /* KeychainAccess */,
 			);
 			productName = Wallabag;
-			productReference = FD6AE81725BB755D00649EAA /* Wallamac.app */;
+			productReference = FD6AE81725BB755D00649EAA /* Wallabag QuickSave.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FD6AE82825BB755E00649EAA /* WallabagTests */ = {
@@ -854,7 +854,7 @@
 				MARKETING_VERSION = 2022.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac;
 				PRODUCT_MODULE_NAME = App;
-				PRODUCT_NAME = Wallamac;
+				PRODUCT_NAME = "Wallabag QuickSave";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -880,7 +880,7 @@
 				MARKETING_VERSION = 2022.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac;
 				PRODUCT_MODULE_NAME = App;
-				PRODUCT_NAME = Wallamac;
+				PRODUCT_NAME = "Wallabag QuickSave";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
