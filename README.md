@@ -3,7 +3,9 @@
 This is a macOS app which allows you to save links directly from Safari to a
 Wallabag instance. I plan to add a Share Extension in the future as well.
 
-You can download it in the AppStore: ![https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg](https://apps.apple.com/us/app/wallamac/id1621482657)
+You can download it in the AppStore:
+
+[![Download On The AppStore](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg)](https://apps.apple.com/us/app/wallabag-quicksave/id1621482657)
 
 ## Notice
 
