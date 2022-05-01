@@ -49,11 +49,11 @@ class ViewController: NSViewController {
 		self.authLabel.stringValue = AuthLabel.checking
 
 		let credentials = API.Credentials.current
-		self.serverTextField.stringValue = credentials?.server.absoluteString ?? "https://app.wallabag.it"
-		self.clientIdTextField.stringValue = credentials?.clientId ?? "14354_5qrutno26p8ogkwgwkow800040owwwwkg4oc4ko0s8cws0s88s"
-		self.clientSecretTextField.stringValue = credentials?.clientSecret ?? "2umird08j0ys80wkw8kokoc8gc08wk8skcccsoo40g4oowssws"
-		self.usernameTextField.stringValue = credentials?.username ?? "jandam"
-		self.passwordTextField.stringValue = "clod7PSUP-lirn9tooy"
+		self.serverTextField.stringValue = credentials?.server.absoluteString ?? ""
+		self.clientIdTextField.stringValue = credentials?.clientId ?? ""
+		self.clientSecretTextField.stringValue = credentials?.clientSecret ?? ""
+		self.usernameTextField.stringValue = credentials?.username ?? ""
+		self.passwordTextField.stringValue = ""
 
 		API.refreshTokenIfNeeded { success in
 			DispatchQueue.main.async {
