@@ -12,6 +12,8 @@
 		A77D27752819D6C000D89E82 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D27742819D6BF00D89E82 /* TipView.swift */; };
 		A77D2777281A791600D89E82 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D2776281A791600D89E82 /* Tip.swift */; };
 		A7B43DC9281ABA4900B4CDA7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */; };
+		A7C5477E2BB2E45D002450E7 /* AppStoreReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5477C2BB2E44A002450E7 /* AppStoreReview.swift */; };
+		A7C547812BB2E51B002450E7 /* Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5477F2BB2E4EF002450E7 /* Internal.swift */; };
 		FD3632F325C575EF004AA740 /* UI.h in Headers */ = {isa = PBXBuildFile; fileRef = FD3632F225C575EF004AA740 /* UI.h */; };
 		FD3632F525C575EF004AA740 /* UI.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3632F425C575EF004AA740 /* UI.m */; };
 		FD3632FF25C575FE004AA740 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3632FE25C575FE004AA740 /* TextField.swift */; };
@@ -108,6 +110,8 @@
 		A77D2776281A791600D89E82 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		A77D2778281A804200D89E82 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A7C5477C2BB2E44A002450E7 /* AppStoreReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReview.swift; sourceTree = "<group>"; };
+		A7C5477F2BB2E4EF002450E7 /* Internal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Internal.swift; sourceTree = "<group>"; };
 		FD3632F025C575EF004AA740 /* libUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD3632F225C575EF004AA740 /* UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
 		FD3632F425C575EF004AA740 /* UI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI.m; sourceTree = "<group>"; };
@@ -281,10 +285,12 @@
 			isa = PBXGroup;
 			children = (
 				FD9EE37725BCC452004F3F87 /* API.swift */,
-				FD9EE3AC25BD8311004F3F87 /* Settings.swift */,
+				A7C5477C2BB2E44A002450E7 /* AppStoreReview.swift */,
 				FD9EE38D25BCC599004F3F87 /* Credentials.swift */,
+				FD9EE3AC25BD8311004F3F87 /* Settings.swift */,
 				FD9EE37825BCC453004F3F87 /* Website.swift */,
 				FD9EE3B225BD86EC004F3F87 /* OAuth.swift */,
+				A7C5477F2BB2E4EF002450E7 /* Internal.swift */,
 				FD74F5F925BCC36D009A12C1 /* WallabagAPI.h */,
 				FD74F5FB25BCC36D009A12C1 /* WallabagAPI.m */,
 				FD9EE37625BCC452004F3F87 /* WallabagAPI-Bridging-Header.h */,
@@ -581,11 +587,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD9EE3AD25BD8311004F3F87 /* Settings.swift in Sources */,
+				A7C5477E2BB2E45D002450E7 /* AppStoreReview.swift in Sources */,
 				FD9EE3B325BD86EC004F3F87 /* OAuth.swift in Sources */,
 				FD9EE37925BCC453004F3F87 /* API.swift in Sources */,
 				FD74F5FC25BCC36D009A12C1 /* WallabagAPI.m in Sources */,
 				FD9EE38E25BCC599004F3F87 /* Credentials.swift in Sources */,
 				FD494C6E266AC43100EE5C4A /* AppCredentials.swift in Sources */,
+				A7C547812BB2E51B002450E7 /* Internal.swift in Sources */,
 				FD9EE37A25BCC453004F3F87 /* Website.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

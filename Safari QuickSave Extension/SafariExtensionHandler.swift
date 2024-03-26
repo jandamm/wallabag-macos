@@ -19,6 +19,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 					item?.setEnabled(true)
 					switch result {
 					case .success:
+						API.AppStoreReview.request()
 						item?.setBadgeText(
 							API.Settings.showSuccessMessage
 							? "Ok"
