@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A710D18A2B529B64004070A4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD6AE85325BB755E00649EAA /* Info.plist */; };
 		A710D18B2B529B69004070A4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD6AE82425BB755E00649EAA /* Info.plist */; };
-		A77D27752819D6C000D89E82 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D27742819D6BF00D89E82 /* TipViewController.swift */; };
+		A77D27752819D6C000D89E82 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D27742819D6BF00D89E82 /* TipView.swift */; };
 		A77D2777281A791600D89E82 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D2776281A791600D89E82 /* Tip.swift */; };
 		A7B43DC9281ABA4900B4CDA7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */; };
 		FD3632F325C575EF004AA740 /* UI.h in Headers */ = {isa = PBXBuildFile; fileRef = FD3632F225C575EF004AA740 /* UI.h */; };
@@ -104,7 +104,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A77D27742819D6BF00D89E82 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
+		A77D27742819D6BF00D89E82 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		A77D2776281A791600D89E82 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		A77D2778281A804200D89E82 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -232,7 +232,7 @@
 				FD6AE81B25BB755D00649EAA /* AppDelegate.swift */,
 				FD6AE81D25BB755D00649EAA /* Main.storyboard */,
 				FD6AE82025BB755D00649EAA /* ViewController.swift */,
-				A77D27742819D6BF00D89E82 /* TipViewController.swift */,
+				A77D27742819D6BF00D89E82 /* TipView.swift */,
 				A77D2776281A791600D89E82 /* Tip.swift */,
 				FD6AE82225BB755E00649EAA /* Assets.xcassets */,
 				FD6AE82425BB755E00649EAA /* Info.plist */,
@@ -554,7 +554,7 @@
 				FD494C6C266AC42E00EE5C4A /* AppCredentials.swift in Sources */,
 				FD6AE82125BB755D00649EAA /* ViewController.swift in Sources */,
 				A77D2777281A791600D89E82 /* Tip.swift in Sources */,
-				A77D27752819D6C000D89E82 /* TipViewController.swift in Sources */,
+				A77D27752819D6C000D89E82 /* TipView.swift in Sources */,
 				FD6AE81C25BB755D00649EAA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

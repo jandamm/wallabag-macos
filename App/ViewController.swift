@@ -8,23 +8,19 @@
 import Cocoa
 import SafariServices.SFSafariApplication
 import SafariServices.SFSafariExtensionManager
+import SwiftUI
 import Wallabag
 import UI
 
-private let freeToUse = "This App is free to use. But in order to keep it in the AppStore I need to pay a yearly fee."
 class ViewController: NSViewController {
 
-	@IBOutlet private var tipStackView: NSStackView!
-	@IBOutlet private var tipLabel: NSTextField!
-	@IBOutlet private var tipButton: NSButton!
-
-	@IBOutlet private var thankYouView: NSView!
+	@IBOutlet private var mainStackView: NSStackView!
 
 	@IBOutlet private var authLabel: NSTextField!
-	@IBOutlet private var serverTextField: TextField!
-	@IBOutlet private var clientIdTextField: TextField!
-	@IBOutlet private var clientSecretTextField: TextField!
-	@IBOutlet private var usernameTextField: TextField!
+	@IBOutlet private var serverTextField: UI.TextField!
+	@IBOutlet private var clientIdTextField: UI.TextField!
+	@IBOutlet private var clientSecretTextField: UI.TextField!
+	@IBOutlet private var usernameTextField: UI.TextField!
 	@IBOutlet private var passwordTextField: SecureTextField!
 	@IBOutlet private var validateCredentialsButton: NSButton!
 
@@ -34,13 +30,10 @@ class ViewController: NSViewController {
 		super.viewDidLoad()
 
 		if #available(macOS 12.0, *) {
-			Task {
-				tipStackView.isHidden = (await Tip.fetch()).isEmpty
-			}
-
-			setTippingState()
-		} else {
-			tipStackView.isHidden = true
+			mainStackView.insertArrangedSubview(
+				NSHostingView(rootView: TipView()),
+				at: 0
+			)
 		}
 
 		validateCredentialsButton.becomeFirstResponder()
@@ -114,28 +107,6 @@ class ViewController: NSViewController {
 		self.authLabel.stringValue = success
 			? AuthLabel.valid
 			: AuthLabel.userInput
-	}
-
-	@available(macOS 12.0, *)
-	private func setTippingState() {
-			if !Tip.previousTips.isEmpty {
-				thankYouView.isHidden = false
-				tipLabel.stringValue = freeToUse
-				tipButton.title = "Tip again"
-			} else {
-				tipLabel.stringValue = "\(freeToUse)\nIt would be nice if you consider giving a tip."
-				tipButton.title = "Give a Tip"
-			}
-	}
-
-	override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-		super.prepare(for: segue, sender: sender)
-		if #available(macOS 12.0, *) {
-			guard let tip = segue.destinationController as? TipViewController else { return }
-			tip.onSuccess = { [weak self] in
-				self?.setTippingState()
-			}
-		}
 	}
 }
 
