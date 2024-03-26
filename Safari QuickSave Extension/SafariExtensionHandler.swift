@@ -22,6 +22,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 						API.AppStoreReview.request()
 
 						API.Telemetry.savedWebsite()
+						API.Statistics.savedWebsite()
 
 						item?.setBadgeText(
 							API.Settings.showSuccessMessage

@@ -12,6 +12,7 @@
 		A77D27752819D6C000D89E82 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D27742819D6BF00D89E82 /* TipView.swift */; };
 		A77D2777281A791600D89E82 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D2776281A791600D89E82 /* Tip.swift */; };
 		A7B43DC9281ABA4900B4CDA7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */; };
+		A7C5477B2BB2E19B002450E7 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C547792BB2E183002450E7 /* Statistics.swift */; };
 		A7C5477E2BB2E45D002450E7 /* AppStoreReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5477C2BB2E44A002450E7 /* AppStoreReview.swift */; };
 		A7C547812BB2E51B002450E7 /* Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5477F2BB2E4EF002450E7 /* Internal.swift */; };
 		A7C547862BB36F4E002450E7 /* Telemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C547842BB36F1C002450E7 /* Telemetry.swift */; };
@@ -113,6 +114,7 @@
 		A77D2776281A791600D89E82 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		A77D2778281A804200D89E82 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A7C547792BB2E183002450E7 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		A7C5477C2BB2E44A002450E7 /* AppStoreReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReview.swift; sourceTree = "<group>"; };
 		A7C5477F2BB2E4EF002450E7 /* Internal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Internal.swift; sourceTree = "<group>"; };
 		A7C547842BB36F1C002450E7 /* Telemetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Telemetry.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				A7C5477C2BB2E44A002450E7 /* AppStoreReview.swift */,
 				FD9EE38D25BCC599004F3F87 /* Credentials.swift */,
 				FD9EE3AC25BD8311004F3F87 /* Settings.swift */,
+				A7C547792BB2E183002450E7 /* Statistics.swift */,
 				A7C547842BB36F1C002450E7 /* Telemetry.swift */,
 				A7C5478D2BB42DC1002450E7 /* Telemetry+AppID.swift */,
 				FD9EE37825BCC453004F3F87 /* Website.swift */,
@@ -627,6 +630,7 @@
 				FD9EE38E25BCC599004F3F87 /* Credentials.swift in Sources */,
 				FD494C6E266AC43100EE5C4A /* AppCredentials.swift in Sources */,
 				A7C547812BB2E51B002450E7 /* Internal.swift in Sources */,
+				A7C5477B2BB2E19B002450E7 /* Statistics.swift in Sources */,
 				A7C5478F2BB42DDB002450E7 /* Telemetry+AppID.swift in Sources */,
 				FD9EE37A25BCC453004F3F87 /* Website.swift in Sources */,
 			);
