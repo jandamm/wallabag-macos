@@ -29,6 +29,8 @@ class ViewController: NSViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		API.Telemetry.launchedApp()
+
 		if #available(macOS 12.0, *) {
 			mainStackView.insertArrangedSubview(
 				NSHostingView(rootView: TipView()),
@@ -82,6 +84,7 @@ class ViewController: NSViewController {
 		}
 
 		API.authenticate(credentials: credentials, password: passwordTextField.stringValue) { success in
+			API.Telemetry.authenticate(success: success)
 			DispatchQueue.main.async {
 				self.setAuthResponse(success)
 				if success {

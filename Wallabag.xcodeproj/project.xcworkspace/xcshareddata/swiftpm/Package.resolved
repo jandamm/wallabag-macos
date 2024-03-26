@@ -1,4 +1,5 @@
 {
+  "originHash" : "b8c9771db7b7e2dadf55154eb8daedd6c3e4bf0252bcd69be463bbd334064d26",
   "pins" : [
     {
       "identity" : "keychainaccess",
@@ -8,7 +9,16 @@
         "revision" : "84e546727d66f1adc5439debad16270d0fdd04e7",
         "version" : "4.2.2"
       }
+    },
+    {
+      "identity" : "swiftclient",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TelemetryDeck/SwiftClient",
+      "state" : {
+        "revision" : "d20ccc4b8266cf739eede58cdfc7e9c6ffb41cda",
+        "version" : "1.5.1"
+      }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

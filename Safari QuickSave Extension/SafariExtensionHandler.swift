@@ -20,6 +20,9 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 					switch result {
 					case .success:
 						API.AppStoreReview.request()
+
+						API.Telemetry.savedWebsite()
+
 						item?.setBadgeText(
 							API.Settings.showSuccessMessage
 							? "Ok"

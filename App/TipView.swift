@@ -8,6 +8,7 @@
 import Cocoa
 import StoreKit
 import SwiftUI
+import Wallabag
 
 @available(macOS 12.0, *)
 struct TipView: View {
@@ -59,7 +60,9 @@ struct TipView: View {
 
 				if let selectedProduct {
 					Button("Tip \(selectedProduct.displayPrice)") {
+						API.Telemetry.tipTapped(product: selectedProduct.id, initialTip: hasTippedBefore)
 						Tip.purchase(selectedProduct) {
+							API.Telemetry.tipSuccessful(product: selectedProduct.id, initialTip: hasTippedBefore)
 							hasTipped = true
 							hasTippedBefore = true
 							products = []
