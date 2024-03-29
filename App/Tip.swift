@@ -20,7 +20,7 @@ enum Tip {
 
 	static func fetch() async -> [Product] {
 		do {
-			products = try await Product.products(for: (1...3).map { "de.jandamm.wallamac.tip\($0)" })
+			products = try await Product.products(for: (1...4).map { "de.jandamm.wallamac.tip\($0)" })
 			listenForStoreKitUpdates()
 		} catch {
 			print(error)
