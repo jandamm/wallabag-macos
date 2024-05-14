@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A710D18A2B529B64004070A4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD6AE85325BB755E00649EAA /* Info.plist */; };
-		A710D18B2B529B69004070A4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD6AE82425BB755E00649EAA /* Info.plist */; };
 		A77D27752819D6C000D89E82 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D27742819D6BF00D89E82 /* TipView.swift */; };
 		A77D2777281A791600D89E82 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D2776281A791600D89E82 /* Tip.swift */; };
 		A7B43DC9281ABA4900B4CDA7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */; };
@@ -30,7 +28,7 @@
 		FD6AE82125BB755D00649EAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AE82025BB755D00649EAA /* ViewController.swift */; };
 		FD6AE82325BB755E00649EAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD6AE82225BB755E00649EAA /* Assets.xcassets */; };
 		FD6AE82E25BB755E00649EAA /* WallabagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AE82D25BB755E00649EAA /* WallabagTests.swift */; };
-		FD6AE84025BB755E00649EAA /* Safari Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FD6AE83F25BB755E00649EAA /* Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FD6AE84025BB755E00649EAA /* Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FD6AE83F25BB755E00649EAA /* Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FD6AE84525BB755E00649EAA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6AE84425BB755E00649EAA /* Cocoa.framework */; };
 		FD6AE84825BB755E00649EAA /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AE84725BB755E00649EAA /* SafariExtensionHandler.swift */; };
 		FD74F5A425BCC16A009A12C1 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FD74F5A325BCC16A009A12C1 /* KeychainAccess */; };
@@ -96,15 +94,15 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD6AE85A25BB755E00649EAA /* Embed App Extensions */ = {
+		FD6AE85A25BB755E00649EAA /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				FD6AE84025BB755E00649EAA /* Safari Extension.appex in Embed App Extensions */,
+				FD6AE84025BB755E00649EAA /* Safari Extension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -356,7 +354,7 @@
 				FD6AE81325BB755D00649EAA /* Sources */,
 				FD6AE81425BB755D00649EAA /* Frameworks */,
 				FD6AE81525BB755D00649EAA /* Resources */,
-				FD6AE85A25BB755E00649EAA /* Embed App Extensions */,
+				FD6AE85A25BB755E00649EAA /* Embed Foundation Extensions */,
 				FD1DA46925BCBCA50009CB0E /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -440,8 +438,9 @@
 		FD6AE80F25BB755D00649EAA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					FD3632EF25C575EF004AA740 = {
 						CreatedOnToolsVersion = 12.2;
@@ -494,7 +493,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A710D18B2B529B69004070A4 /* Info.plist in Resources */,
 				FD6AE82325BB755E00649EAA /* Assets.xcassets in Resources */,
 				FD6AE81F25BB755D00649EAA /* Main.storyboard in Resources */,
 			);
@@ -511,7 +509,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A710D18A2B529B64004070A4 /* Info.plist in Resources */,
 				FD9EBA0925C2048800B6CEDA /* ToolbarItemIcon.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +646,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 6N9Z26P656;
 				EXECUTABLE_PREFIX = lib;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -656,6 +654,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "UI/UI-Bridging-Header.h";
@@ -669,6 +668,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 6N9Z26P656;
 				EXECUTABLE_PREFIX = lib;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -676,6 +676,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "UI/UI-Bridging-Header.h";
@@ -717,6 +718,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -735,6 +737,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 2024.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -778,6 +781,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -790,6 +794,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 2024.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -805,6 +810,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Safari QuickSave Extension/Wallabag_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7TCLF98BX7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Safari QuickSave Extension/Info.plist";
@@ -813,7 +819,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.2;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac.safari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -829,6 +835,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Safari QuickSave Extension/Wallabag_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7TCLF98BX7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Safari QuickSave Extension/Info.plist";
@@ -837,7 +844,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2022.2;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac.safari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -856,6 +863,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7TCLF98BX7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = App/Info.plist;
@@ -863,7 +871,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 2024.1;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac;
 				PRODUCT_MODULE_NAME = App;
 				PRODUCT_NAME = "Wallabag QuickSave";
@@ -882,6 +890,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7TCLF98BX7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = App/Info.plist;
@@ -889,7 +898,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 2024.1;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac;
 				PRODUCT_MODULE_NAME = App;
 				PRODUCT_NAME = "Wallabag QuickSave";
@@ -906,6 +915,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 6N9Z26P656;
 				INFOPLIST_FILE = AppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -913,6 +923,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -928,6 +939,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 6N9Z26P656;
 				INFOPLIST_FILE = AppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -935,6 +947,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -947,6 +960,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 362C7752P3;
 				EXECUTABLE_PREFIX = lib;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -954,6 +968,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_MODULE_NAME = Wallabag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -968,6 +983,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 362C7752P3;
 				EXECUTABLE_PREFIX = lib;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -975,6 +991,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_MODULE_NAME = Wallabag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
