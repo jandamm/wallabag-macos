@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A76397C92CBD5662002A6BC0 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = A76397C82CBD5662002A6BC0 /* TelemetryDeck */; };
 		A77D27752819D6C000D89E82 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D27742819D6BF00D89E82 /* TipView.swift */; };
 		A77D2777281A791600D89E82 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D2776281A791600D89E82 /* Tip.swift */; };
 		A7B43DC9281ABA4900B4CDA7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */; };
@@ -14,7 +15,6 @@
 		A7C5477E2BB2E45D002450E7 /* AppStoreReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5477C2BB2E44A002450E7 /* AppStoreReview.swift */; };
 		A7C547812BB2E51B002450E7 /* Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5477F2BB2E4EF002450E7 /* Internal.swift */; };
 		A7C547862BB36F4E002450E7 /* Telemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C547842BB36F1C002450E7 /* Telemetry.swift */; };
-		A7C547892BB36FA9002450E7 /* TelemetryClient in Frameworks */ = {isa = PBXBuildFile; productRef = A7C547882BB36FA9002450E7 /* TelemetryClient */; };
 		A7C5478F2BB42DDB002450E7 /* Telemetry+AppID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5478D2BB42DC1002450E7 /* Telemetry+AppID.swift */; };
 		FD3632F325C575EF004AA740 /* UI.h in Headers */ = {isa = PBXBuildFile; fileRef = FD3632F225C575EF004AA740 /* UI.h */; };
 		FD3632F525C575EF004AA740 /* UI.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3632F425C575EF004AA740 /* UI.m */; };
@@ -190,7 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7C547892BB36FA9002450E7 /* TelemetryClient in Frameworks */,
+				A76397C92CBD5662002A6BC0 /* TelemetryDeck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +426,7 @@
 			);
 			name = WallabagAPI;
 			packageProductDependencies = (
-				A7C547882BB36FA9002450E7 /* TelemetryClient */,
+				A76397C82CBD5662002A6BC0 /* TelemetryDeck */,
 			);
 			productName = WallabagAPI;
 			productReference = FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */;
@@ -1064,8 +1064,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/TelemetryDeck/SwiftClient";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.1;
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.3.0;
 			};
 		};
 		FD1DA42A25BCA8BB0009CB0E /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
@@ -1079,10 +1079,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A7C547882BB36FA9002450E7 /* TelemetryClient */ = {
+		A76397C82CBD5662002A6BC0 /* TelemetryDeck */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A7C547872BB36FA9002450E7 /* XCRemoteSwiftPackageReference "SwiftClient" */;
-			productName = TelemetryClient;
+			productName = TelemetryDeck;
 		};
 		FD74F5A325BCC16A009A12C1 /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;

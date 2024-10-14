@@ -42,10 +42,10 @@ public extension API.Telemetry {
 			return
 		}
 		initialize()
-		TelemetryManager.send(
+		TelemetryDeck.signal(
 			signal,
-			for: user,
-			with: info ?? [:]
+			parameters: info ?? [:],
+			customUserID: user
 		)
 		#endif
 	}
@@ -65,7 +65,7 @@ public extension API.Telemetry {
 		config.sessionID = sessionID // Make sure to always use my sessionID
 		guard !TelemetryManager.isInitialized else { return }
 		config.sendNewSessionBeganSignal = false
-		TelemetryManager.initialize(with: config)
+		TelemetryDeck.initialize(config: config)
 	}
 }
 
