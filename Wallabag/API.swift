@@ -20,9 +20,9 @@ public extension API {
 		case oAuth, http(statusCode: Int), unknown
 	}
 
-	static func authenticate(credentials: Credentials, password: String, completion: @escaping (Bool) -> Void) {
+	static func authenticate(credentials: Credentials, password: String, completion: @escaping (Result<Void, Swift.Error>) -> Void) {
 		getOAuth(request: OAuth.Request(credentials: credentials, password: password), credentials: credentials) {
-			completion($0 != nil)
+			completion($0.map { _ in () })
 		}
 	}
 
@@ -86,24 +86,35 @@ extension API {
 			completion(oAuth)
 			return
 		}
-		getOAuth(request: .init(oAuth: auth), credentials: auth.credentials, completion: completion)
+		getOAuth(request: .init(oAuth: auth), credentials: auth.credentials) { completion($0.value) }
 	}
 
-	private static func getOAuth(request oAuthRequest: OAuth.Request, credentials: Credentials, completion: @escaping (OAuth?) -> Void) {
+	private static func getOAuth(request oAuthRequest: OAuth.Request, credentials: Credentials, completion: @escaping (Result<OAuth, Swift.Error>) -> Void) {
 		do {
 			var request = URLRequest(url: credentials.server.appendingPathComponent("oauth/v2/token"))
 			request.httpMethod = "POST"
 			request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 			request.httpBody = try encoder.encode(oAuthRequest)
 
-			session.dataTask(with: request) { data, _, _ in
-				oAuth = data
-					.flatMap { try? decoder.decode(OAuth.Token.self, from: $0) }
-					.map { OAuth(credentials: credentials, token: $0, date: Date()) }
-				completion(oAuth)
+			session.dataTask(with: request) { data, _, error in
+				do {
+					guard let data else {
+						throw error ?? NSError(domain: "unknown", code: -1)
+					}
+					let newAuth = OAuth(
+						credentials: credentials,
+						token: try decoder.decode(OAuth.Token.self, from: data),
+						date: Date()
+					)
+					oAuth = newAuth
+					completion(.success(newAuth))
+				} catch {
+					oAuth = nil
+					completion(.failure(error))
+				}
 			}.resume()
 		} catch {
-			completion(nil)
+			completion(.failure(error))
 		}
 	}
 }

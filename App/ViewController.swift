@@ -52,7 +52,7 @@ class ViewController: NSViewController {
 
 		API.refreshTokenIfNeeded { success in
 			DispatchQueue.main.async {
-				self.setAuthResponse(success)
+				self.setAuthResponse(wasSuccessful: success)
 			}
 		}
 
@@ -83,10 +83,11 @@ class ViewController: NSViewController {
 			return
 		}
 
-		API.authenticate(credentials: credentials, password: passwordTextField.stringValue) { success in
+		API.authenticate(credentials: credentials, password: passwordTextField.stringValue) { result in
+			let success = result.isSuccess
 			API.Telemetry.authenticate(success: success)
 			DispatchQueue.main.async {
-				self.setAuthResponse(success)
+				self.respondToAuthResponse(result)
 				if success {
 					self.passwordTextField.stringValue = ""
 				}
@@ -106,10 +107,14 @@ class ViewController: NSViewController {
 		}
 	}
 
-	private func setAuthResponse(_ success: Bool) {
+	private func setAuthResponse(wasSuccessful success: Bool) {
 		self.authLabel.stringValue = success
 			? AuthLabel.valid
 			: AuthLabel.userInput
+	}
+
+	private func respondToAuthResponse(_ result: Result<Void, Error>) {
+		setAuthResponse(wasSuccessful: result.isSuccess)
 	}
 }
 

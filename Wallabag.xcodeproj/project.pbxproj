@@ -16,6 +16,7 @@
 		A7C547812BB2E51B002450E7 /* Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5477F2BB2E4EF002450E7 /* Internal.swift */; };
 		A7C547862BB36F4E002450E7 /* Telemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C547842BB36F1C002450E7 /* Telemetry.swift */; };
 		A7C5478F2BB42DDB002450E7 /* Telemetry+AppID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5478D2BB42DC1002450E7 /* Telemetry+AppID.swift */; };
+		A7C9E37A2CDABA4000522CAE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9E3792CDABA3B00522CAE /* Extensions.swift */; };
 		FD3632F325C575EF004AA740 /* UI.h in Headers */ = {isa = PBXBuildFile; fileRef = FD3632F225C575EF004AA740 /* UI.h */; };
 		FD3632F525C575EF004AA740 /* UI.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3632F425C575EF004AA740 /* UI.m */; };
 		FD3632FF25C575FE004AA740 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3632FE25C575FE004AA740 /* TextField.swift */; };
@@ -117,6 +118,7 @@
 		A7C5477F2BB2E4EF002450E7 /* Internal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Internal.swift; sourceTree = "<group>"; };
 		A7C547842BB36F1C002450E7 /* Telemetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Telemetry.swift; sourceTree = "<group>"; };
 		A7C5478D2BB42DC1002450E7 /* Telemetry+AppID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Telemetry+AppID.swift"; sourceTree = "<group>"; };
+		A7C9E3792CDABA3B00522CAE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FD3632F025C575EF004AA740 /* libUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD3632F225C575EF004AA740 /* UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
 		FD3632F425C575EF004AA740 /* UI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI.m; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				FD9EE37825BCC453004F3F87 /* Website.swift */,
 				FD9EE3B225BD86EC004F3F87 /* OAuth.swift */,
 				A7C5477F2BB2E4EF002450E7 /* Internal.swift */,
+				A7C9E3792CDABA3B00522CAE /* Extensions.swift */,
 				FD74F5F925BCC36D009A12C1 /* WallabagAPI.h */,
 				FD74F5FB25BCC36D009A12C1 /* WallabagAPI.m */,
 				FD9EE37625BCC452004F3F87 /* WallabagAPI-Bridging-Header.h */,
@@ -588,6 +591,7 @@
 				A7C547862BB36F4E002450E7 /* Telemetry.swift in Sources */,
 				FD9EE38E25BCC599004F3F87 /* Credentials.swift in Sources */,
 				FD494C6E266AC43100EE5C4A /* AppCredentials.swift in Sources */,
+				A7C9E37A2CDABA4000522CAE /* Extensions.swift in Sources */,
 				A7C547812BB2E51B002450E7 /* Internal.swift in Sources */,
 				A7C5477B2BB2E19B002450E7 /* Statistics.swift in Sources */,
 				A7C5478F2BB42DDB002450E7 /* Telemetry+AppID.swift in Sources */,
