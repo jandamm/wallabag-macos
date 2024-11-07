@@ -115,6 +115,10 @@ class ViewController: NSViewController {
 
 	private func respondToAuthResponse(_ result: Result<Void, Error>) {
 		setAuthResponse(wasSuccessful: result.isSuccess)
+		guard case let .failure(error) = result else {
+			return
+		}
+		presentError(error)
 	}
 }
 
