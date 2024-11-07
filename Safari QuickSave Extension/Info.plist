@@ -47,5 +47,10 @@
 	</dict>
 	<key>NSHumanReadableDescription</key>
 	<string>Use this extension to quickly save links to Wallabag.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
