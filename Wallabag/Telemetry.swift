@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import TelemetryClient
+import TelemetryDeck
 
 public extension API {
 	enum Telemetry {}
