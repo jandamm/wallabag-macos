@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/TelemetryDeck/SwiftClient",
       "state" : {
-        "revision" : "65bfb4ce809c58deee31b4889ee650b01ed04a88",
-        "version" : "2.8.2"
+        "revision" : "501270cd33082c3fa430b724e849855482ed051c",
+        "version" : "2.9.3"
       }
     }
   ],
