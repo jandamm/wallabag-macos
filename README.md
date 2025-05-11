@@ -7,6 +7,15 @@ You can download it in the AppStore:
 
 [![Download On The AppStore](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg)](https://apps.apple.com/us/app/wallabag-quicksave/id1621482657)
 
+## Why does it cost money?
+
+I've first submitted **Wallabag QuickSave** to the Mac AppStore on 30th of April in 2022.
+Since then I've earned $214.35 from sales and tips. I also need to pay taxes (20-30%) on this money so it's more like $161.
+I also need to pay €99 ($110) per year to Apple for my developer account so the app can be made available in the store.
+So having the app in the store is a loss of $169.
+Some of this is buffered since I have another app in the store but I still paid more to Apple than I got revenue from both apps.
+So I consider the price of **Wallabag QuickSave** as a hosting fee to Apple than income for me. If there would be a way to distribute Safari extensions without paying Apples developer fee I'd make the app free instead.
+
 ## Why are there (almost) empty releases?
 
 On most days the AppStore shows Wallabag QuickSave on the first place when searching for `Wallabag` in the Mac AppStore.

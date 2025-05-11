@@ -112,6 +112,7 @@
 		A77D27742819D6BF00D89E82 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		A77D2776281A791600D89E82 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		A77D2778281A804200D89E82 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		A782C1F42DD0CCC6005F38B0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A7C547792BB2E183002450E7 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		A7C5477C2BB2E44A002450E7 /* AppStoreReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReview.swift; sourceTree = "<group>"; };
@@ -213,6 +214,7 @@
 		FD6AE80E25BB755D00649EAA = {
 			isa = PBXGroup;
 			children = (
+				A782C1F42DD0CCC6005F38B0 /* README.md */,
 				A77D2778281A804200D89E82 /* Configuration.storekit */,
 				FD494C6A266AC42B00EE5C4A /* AppCredentials.swift */,
 				FD6AE81925BB755D00649EAA /* App */,
