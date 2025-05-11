@@ -1,11 +1,27 @@
 # Wallabag QuickSave
 
 This is a macOS app which allows you to save links directly from Safari to a
-Wallabag instance. I plan to add a Share Extension in the future as well.
+Wallabag instance.
 
 You can download it in the AppStore:
 
 [![Download On The AppStore](https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg)](https://apps.apple.com/us/app/wallabag-quicksave/id1621482657)
+
+## Further Updates
+
+Unfortunately Apple rejected my last submission because I didn't allow to purchase the Wallabag subscription within the app. But I could *fix* that later if this is a urgent fix
+
+I explained that I don't own the Wallabag service and I only provide a client for Safari to save links to the service.
+
+Afterwards they completely rejected the submission because they "noticed that [my] app name includes the following trademarked term or popular app name, which may confuse customers: Wallabag".
+
+I tried to explain that the whole point of the app is to use the service Wallabag from Safari and that removing the term **Wallabag** from title AND subtitle would rather confuse customers since they wouldn't know what the app is about.
+But this didn't help.
+
+I've asked Nicolas Lœuillet whether he can write something that it's okay to use the term **Wallabag** for this app.
+I hope he agrees and I also hope this would help to get the app approved...
+
+Unfortunately I cannot update the app in the meantime.
 
 ## Why does it cost money?
 
