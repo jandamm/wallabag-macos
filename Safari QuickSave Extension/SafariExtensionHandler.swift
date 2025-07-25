@@ -10,7 +10,17 @@ import Wallabag
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
 
+    // Create a shared instance so the popover can access its methods
+    static let shared = SafariExtensionHandler()
+
+    // Call the popover (clicking on the extension Icon shall show settings option)
+    override func popoverViewController() -> SFSafariExtensionViewController {
+        return PopoverViewController.shared
+    }
+
+    
     override func contextMenuItemSelected(withCommand command: String, in page: SFSafariPage, userInfo: [String : Any]? = nil) {
+
         // For "Save Page", the existing logic already handles feedback.
         if command == "save-current-page" {
             handleSaveCurrentPage(in: page)
@@ -51,21 +61,21 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]? = nil) { }
     
-    private func handleSaveCurrentPage(in page: SFSafariPage) {
+    func handleSaveCurrentPage(in page: SFSafariPage) {
         getWebsite(of: page) { website in
             guard let website = website else { return }
             self.save(website: website)
         }
     }
 
-    private func save(website: Website) {
+    func save(website: Website) {
         updateToolbarBadge(with: "...")
         API.save(website: website) { result in
             self.handleSaveResponse(result: result)
         }
     }
 
-    private func handleSaveResponse(result: Result<Void, API.Error>) {
+    func handleSaveResponse(result: Result<Void, API.Error>) {
         switch result {
         case .success:
             updateToolbarBadge(with: "Ok", autoClear: true)
@@ -86,7 +96,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         validationHandler(true, "");
     }
     
-    private func updateToolbarBadge(with text: String?, autoClear: Bool = false) {
+    func updateToolbarBadge(with text: String?, autoClear: Bool = false) {
         SFSafariApplication.getActiveWindow { window in
             window?.getToolbarItem { item in
                 item?.setBadgeText(text)
@@ -95,7 +105,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         }
     }
 
-    private func getWebsite(of page: SFSafariPage, callback: @escaping (Website?) -> Void) {
+    func getWebsite(of page: SFSafariPage, callback: @escaping (Website?) -> Void) {
         page.getPropertiesWithCompletionHandler { properties in
             callback(properties?.url.map { Website(url: $0, title: properties?.title) })
         }
