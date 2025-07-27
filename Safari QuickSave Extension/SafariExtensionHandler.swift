@@ -29,16 +29,11 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 		}
 
 		// For the other two commands, we first need to get the user's credentials.
-		guard let oAuth = API.oAuth, !oAuth.isExpired else {
+		guard let credentials = API.jsCredentials else {
 			print("Wallabag Error: Not authenticated.")
 			updateToolbarBadge(with: "Login", autoClear: true) // Provide feedback if not logged in
 			return
 		}
-
-		let credentials = [
-			"token": oAuth.token.access_token,
-			"serverURL": oAuth.credentials.server.absoluteString
-		]
 
 		// Now we handle each command and add the feedback.
 		if command == "save-linked-url" {
