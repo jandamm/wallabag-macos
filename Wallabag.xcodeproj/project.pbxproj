@@ -10,6 +10,8 @@
 		A76397C92CBD5662002A6BC0 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = A76397C82CBD5662002A6BC0 /* TelemetryDeck */; };
 		A77D27752819D6C000D89E82 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D27742819D6BF00D89E82 /* TipView.swift */; };
 		A77D2777281A791600D89E82 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D2776281A791600D89E82 /* Tip.swift */; };
+		A782729D2E365D2D0017288B /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782729B2E365D2D0017288B /* PopoverViewController.swift */; };
+		A78272A02E365DA60017288B /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = A782729F2E365DA60017288B /* script.js */; };
 		A7B43DC9281ABA4900B4CDA7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */; };
 		A7C5477B2BB2E19B002450E7 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C547792BB2E183002450E7 /* Statistics.swift */; };
 		A7C5477E2BB2E45D002450E7 /* AppStoreReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5477C2BB2E44A002450E7 /* AppStoreReview.swift */; };
@@ -112,6 +114,8 @@
 		A77D27742819D6BF00D89E82 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		A77D2776281A791600D89E82 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		A77D2778281A804200D89E82 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		A782729B2E365D2D0017288B /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		A782729F2E365DA60017288B /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		A782C1F42DD0CCC6005F38B0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A7C547792BB2E183002450E7 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
@@ -275,7 +279,9 @@
 		FD6AE84625BB755E00649EAA /* Safari QuickSave Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A782729B2E365D2D0017288B /* PopoverViewController.swift */,
 				FD6AE84725BB755E00649EAA /* SafariExtensionHandler.swift */,
+				A782729F2E365DA60017288B /* script.js */,
 				FD6AE85325BB755E00649EAA /* Info.plist */,
 				FD6AE85425BB755E00649EAA /* Wallabag_Extension.entitlements */,
 				FD6AE84B25BB755E00649EAA /* Resources */,
@@ -515,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD9EBA0925C2048800B6CEDA /* ToolbarItemIcon.pdf in Resources */,
+				A78272A02E365DA60017288B /* script.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD494C6D266AC43000EE5C4A /* AppCredentials.swift in Sources */,
+				A782729D2E365D2D0017288B /* PopoverViewController.swift in Sources */,
 				FD6AE84825BB755E00649EAA /* SafariExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
