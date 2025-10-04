@@ -12,6 +12,7 @@
 		A77D2777281A791600D89E82 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D2776281A791600D89E82 /* Tip.swift */; };
 		A782729D2E365D2D0017288B /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782729B2E365D2D0017288B /* PopoverViewController.swift */; };
 		A78272A02E365DA60017288B /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = A782729F2E365DA60017288B /* script.js */; };
+		A7A706192E91B9B300C264F9 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = A7A706182E91B9B300C264F9 /* AppIcon.icon */; };
 		A7B43DC9281ABA4900B4CDA7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */; };
 		A7C5477B2BB2E19B002450E7 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C547792BB2E183002450E7 /* Statistics.swift */; };
 		A7C5477E2BB2E45D002450E7 /* AppStoreReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5477C2BB2E44A002450E7 /* AppStoreReview.swift */; };
@@ -117,6 +118,7 @@
 		A782729B2E365D2D0017288B /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		A782729F2E365DA60017288B /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		A782C1F42DD0CCC6005F38B0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A7A706182E91B9B300C264F9 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A7C547792BB2E183002450E7 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		A7C5477C2BB2E44A002450E7 /* AppStoreReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReview.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				A77D27742819D6BF00D89E82 /* TipView.swift */,
 				A77D2776281A791600D89E82 /* Tip.swift */,
 				FD6AE82225BB755E00649EAA /* Assets.xcassets */,
+				A7A706182E91B9B300C264F9 /* AppIcon.icon */,
 				FD6AE82425BB755E00649EAA /* Info.plist */,
 			);
 			path = App;
@@ -506,6 +509,7 @@
 			files = (
 				FD6AE82325BB755E00649EAA /* Assets.xcassets in Resources */,
 				FD6AE81F25BB755D00649EAA /* Main.storyboard in Resources */,
+				A7A706192E91B9B300C264F9 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
