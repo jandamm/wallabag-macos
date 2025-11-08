@@ -6,42 +6,15 @@
     {
       "layers" : [
         {
-          "fill-specializations" : [
-            {
-              "value" : {
-                "solid" : "extended-gray:0.00000,1.00000"
-              }
-            },
-            {
-              "appearance" : "dark",
-              "value" : {
-                "solid" : "extended-gray:1.00000,1.00000"
-              }
-            },
-            {
-              "appearance" : "tinted",
-              "value" : {
-                "solid" : "extended-gray:1.00000,1.00000"
-              }
-            }
-          ],
-          "glass-specializations" : [
-            {
-              "value" : false
-            },
-            {
-              "appearance" : "tinted",
-              "value" : true
-            }
-          ],
+          "glass" : false,
           "hidden" : false,
-          "image-name" : "Path.png",
+          "image-name" : "Path.svg",
           "name" : "Path",
           "position" : {
-            "scale" : 0.4,
+            "scale" : 0.8,
             "translation-in-points" : [
-              0,
-              23
+              0.4921875,
+              22.171875
             ]
           }
         }
@@ -60,6 +33,8 @@
     "circles" : [
       "watchOS"
     ],
-    "squares" : "shared"
+    "squares" : [
+      "macOS"
+    ]
   }
 }
