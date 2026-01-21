@@ -50,7 +50,7 @@ class ViewController: NSViewController {
 		self.usernameTextField.stringValue = credentials?.username ?? ""
 		self.passwordTextField.stringValue = ""
 
-		API.refreshTokenIfNeeded { result in
+		API.refreshTokenIfNeeded(clearAuthOnError: false) { result in
 			DispatchQueue.main.async {
 				self.respondToAuthResponse(result)
 			}

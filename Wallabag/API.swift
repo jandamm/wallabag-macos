@@ -21,13 +21,13 @@ public extension API {
 	}
 
 	static func authenticate(credentials: Credentials, password: String, completion: @escaping (Result<Void, Swift.Error>) -> Void) {
-		getOAuth(request: OAuth.Request(credentials: credentials, password: password), credentials: credentials) {
+		getOAuth(request: OAuth.Request(credentials: credentials, password: password), clearAuthOnError: true, credentials: credentials) {
 			completion($0.map { _ in () })
 		}
 	}
 
 	static func save(website: Website, completion: @escaping (Result<Void, Error>) -> Void) {
-		getRefreshToken { result in
+		getRefreshToken(clearAuthOnError: false) { result in
 			let oAuth: OAuth
 			switch result {
 			case .success(let success):
@@ -60,8 +60,8 @@ public extension API {
 		}
 	}
 
-	static func refreshTokenIfNeeded(completion: @escaping (Result<Void, Swift.Error>) -> Void) {
-		getRefreshToken { result in
+	static func refreshTokenIfNeeded(clearAuthOnError: Bool, completion: @escaping (Result<Void, Swift.Error>) -> Void) {
+		getRefreshToken(clearAuthOnError: clearAuthOnError) { result in
 			switch result {
 			case .success,
 			 .failure(.noAuth):
@@ -101,15 +101,15 @@ extension API {
 		}
 	}
 
-	static func getRefreshToken(completion: @escaping (Result<OAuth, OAuth.Error>) -> Void) {
+	static func getRefreshToken(clearAuthOnError: Bool, completion: @escaping (Result<OAuth, OAuth.Error>) -> Void) {
 		guard let auth = oAuth, auth.isExpired else {
 			completion(oAuth.map(Result.success) ?? .failure(.noAuth))
 			return
 		}
-		getOAuth(request: .init(oAuth: auth), credentials: auth.credentials) { completion($0.mapError(OAuth.Error.http)) }
+		getOAuth(request: .init(oAuth: auth), clearAuthOnError: clearAuthOnError, credentials: auth.credentials) { completion($0.mapError(OAuth.Error.http)) }
 	}
 
-	private static func getOAuth(request oAuthRequest: OAuth.Request, credentials: Credentials, completion: @escaping (Result<OAuth, Swift.Error>) -> Void) {
+	private static func getOAuth(request oAuthRequest: OAuth.Request, clearAuthOnError: Bool, credentials: Credentials, completion: @escaping (Result<OAuth, Swift.Error>) -> Void) {
 		do {
 			var request = URLRequest(url: credentials.server.appendingPathComponent("oauth/v2/token"))
 			request.httpMethod = "POST"
@@ -129,7 +129,9 @@ extension API {
 					oAuth = newAuth
 					completion(.success(newAuth))
 				} catch {
-					oAuth = nil
+					if clearAuthOnError {
+						oAuth = nil
+					}
 					completion(.failure(error))
 				}
 			}.resume()
