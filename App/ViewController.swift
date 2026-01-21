@@ -50,9 +50,9 @@ class ViewController: NSViewController {
 		self.usernameTextField.stringValue = credentials?.username ?? ""
 		self.passwordTextField.stringValue = ""
 
-		API.refreshTokenIfNeeded { success in
+		API.refreshTokenIfNeeded { result in
 			DispatchQueue.main.async {
-				self.setAuthResponse(wasSuccessful: success)
+				self.respondToAuthResponse(result)
 			}
 		}
 
@@ -107,14 +107,10 @@ class ViewController: NSViewController {
 		}
 	}
 
-	private func setAuthResponse(wasSuccessful success: Bool) {
-		self.authLabel.stringValue = success
+	private func respondToAuthResponse(_ result: Result<Void, Error>) {
+		self.authLabel.stringValue = result.isSuccess
 			? AuthLabel.valid
 			: AuthLabel.userInput
-	}
-
-	private func respondToAuthResponse(_ result: Result<Void, Error>) {
-		setAuthResponse(wasSuccessful: result.isSuccess)
 		guard case let .failure(error) = result else {
 			return
 		}

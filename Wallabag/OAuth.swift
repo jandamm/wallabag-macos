@@ -14,6 +14,11 @@ struct OAuth: Codable  {
 	let token: Token
 	let date: Date
 
+	enum Error: Swift.Error {
+		case noAuth
+		case http(Swift.Error)
+	}
+
 	func request(for pathComponent: String) -> URLRequest {
 		var request = URLRequest(url: credentials.server.appendingPathComponent(pathComponent))
 		request.addValue("Bearer \(token.access_token)", forHTTPHeaderField: "Authorization")

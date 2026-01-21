@@ -17,7 +17,7 @@ let encoder = JSONEncoder()
 
 public extension API {
 	enum Error: Swift.Error {
-		case oAuth, http(statusCode: Int), unknown
+		case oAuth(Swift.Error), http(statusCode: Int), unknown
 	}
 
 	static func authenticate(credentials: Credentials, password: String, completion: @escaping (Result<Void, Swift.Error>) -> Void) {
@@ -27,9 +27,13 @@ public extension API {
 	}
 
 	static func save(website: Website, completion: @escaping (Result<Void, Error>) -> Void) {
-		getRefreshToken { oAuth in
-			guard let oAuth = oAuth else {
-				completion(.failure(.oAuth))
+		getRefreshToken { result in
+			let oAuth: OAuth
+			switch result {
+			case .success(let success):
+				oAuth = success
+			case .failure(let failure):
+				completion(.failure(.oAuth(failure)))
 				return
 			}
 
@@ -56,8 +60,16 @@ public extension API {
 		}
 	}
 
-	static func refreshTokenIfNeeded(completion: @escaping (Bool) -> Void) {
-		getRefreshToken { completion($0 != nil) }
+	static func refreshTokenIfNeeded(completion: @escaping (Result<Void, Swift.Error>) -> Void) {
+		getRefreshToken { result in
+			switch result {
+			case .success,
+			 .failure(.noAuth):
+				completion(.success(()))
+			case let .failure(.http(error)):
+				completion(.failure(error))
+			}
+		}
 	}
 
 	static func openApp() {
@@ -89,12 +101,12 @@ extension API {
 		}
 	}
 
-	static func getRefreshToken(completion: @escaping (OAuth?) -> Void) {
+	static func getRefreshToken(completion: @escaping (Result<OAuth, OAuth.Error>) -> Void) {
 		guard let auth = oAuth, auth.isExpired else {
-			completion(oAuth)
+			completion(oAuth.map(Result.success) ?? .failure(.noAuth))
 			return
 		}
-		getOAuth(request: .init(oAuth: auth), credentials: auth.credentials) { completion($0.value) }
+		getOAuth(request: .init(oAuth: auth), credentials: auth.credentials) { completion($0.mapError(OAuth.Error.http)) }
 	}
 
 	private static func getOAuth(request oAuthRequest: OAuth.Request, credentials: Credentials, completion: @escaping (Result<OAuth, Swift.Error>) -> Void) {
