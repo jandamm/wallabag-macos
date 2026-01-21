@@ -838,7 +838,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2025.8;
+				MARKETING_VERSION = 2026.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac.safari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -864,7 +864,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2025.8;
+				MARKETING_VERSION = 2026.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac.safari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -891,7 +891,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2025.8;
+				MARKETING_VERSION = 2026.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac;
 				PRODUCT_MODULE_NAME = App;
 				PRODUCT_NAME = "Wallabag QuickSave";
@@ -918,7 +918,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2025.8;
+				MARKETING_VERSION = 2026.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac;
 				PRODUCT_MODULE_NAME = App;
 				PRODUCT_NAME = "Wallabag QuickSave";
