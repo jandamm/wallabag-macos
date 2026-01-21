@@ -75,6 +75,11 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 		switch result {
 		case .success:
 			updateToolbarBadge(with: "Ok", autoClear: true)
+		case .failure(.oAuth):
+			DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+				API.openApp()
+			}
+			fallthrough
 		case .failure:
 			updateToolbarBadge(with: "Error", autoClear: true)
 		}
