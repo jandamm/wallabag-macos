@@ -1,52 +1,56 @@
 // A global variable to store the URL of the last right-clicked link.
 let lastClickedLinkURL = null;
 
-window.addEventListener('contextmenu', function(event) {
-    let targetElement = event.target.closest('a');
+window.addEventListener(
+  "contextmenu",
+  function (event) {
+    let targetElement = event.target.closest("a");
     if (targetElement && targetElement.href) {
-        lastClickedLinkURL = new URL(targetElement.href, document.baseURI).href;
+      lastClickedLinkURL = new URL(targetElement.href, document.baseURI).href;
     } else {
-        lastClickedLinkURL = null;
+      lastClickedLinkURL = null;
     }
-}, true);
+  },
+  true
+);
 
 safari.self.addEventListener("message", messageHandler);
 
 function messageHandler(event) {
-    switch(event.name) {
-        case "getLinkedURL":
-            safari.extension.dispatchMessage(event.message.callbackId, {
-                url: lastClickedLinkURL.toString()
-            });
-            break;
+  switch (event.name) {
+    case "getLinkedURL":
+      safari.extension.dispatchMessage(event.message.callbackId, {
+        url: lastClickedLinkURL.toString(),
+      });
+      break;
 
-        case "showLinkSelectorUI":
-            showLinkSelector(event.message.callbackId);
-            break;
+    case "showLinkSelectorUI":
+      showLinkSelector(event.message.callbackId);
+      break;
 
-        default:
-            console.error("❌ Unknown Message:", event.name);
-    }
+    default:
+      console.error("❌ Unknown Message:", event.name);
+  }
 }
 
 // The UI logic with updated, more robust CSS.
 function showLinkSelector(callbackId) {
-    const allLinks = [];
-    document.querySelectorAll('a[href]').forEach(function(a) {
-        const absoluteUrl = new URL(a.href, document.baseURI).href;
-        if (absoluteUrl.startsWith('http')) {
-            allLinks.push({ url: absoluteUrl, title: a.innerText.trim() || a.href });
-        }
-    });
-
-    if (allLinks.length === 0) {
-        alert("No links found on this page.");
-        return;
+  const allLinks = [];
+  document.querySelectorAll("a[href]").forEach(function (a) {
+    const absoluteUrl = new URL(a.href, document.baseURI).href;
+    if (absoluteUrl.startsWith("http")) {
+      allLinks.push({ url: absoluteUrl, title: a.innerText.trim() || a.href });
     }
+  });
 
-    const modal = document.createElement('div');
-    modal.id = 'wallabag-selector-modal';
-    modal.innerHTML = `
+  if (allLinks.length === 0) {
+    alert("No links found on this page.");
+    return;
+  }
+
+  const modal = document.createElement("div");
+  modal.id = "wallabag-selector-modal";
+  modal.innerHTML = `
         <div class="wallabag-modal-content">
             <header>
                 <h1>Select Links to Save (${allLinks.length} found)</h1>
@@ -58,7 +62,9 @@ function showLinkSelector(callbackId) {
                 <button id="wallabag-select-none">Select None Visible</button>
             </div>
             <ul id="wallabag-links-list">
-                ${allLinks.map((link, index) => `
+                ${allLinks
+                  .map(
+                    (link, index) => `
                     <li class="wallabag-link-item" data-index="${index}">
                         <input type="checkbox" id="wallabag-link-${index}" checked>
                         <label for="wallabag-link-${index}">
@@ -66,7 +72,9 @@ function showLinkSelector(callbackId) {
                             <span class="url">${link.url}</span>
                         </label>
                     </li>
-                `).join('')}
+                `
+                  )
+                  .join("")}
             </ul>
             <footer>
                 <button id="wallabag-save-btn">Save Selected Links</button>
@@ -99,54 +107,73 @@ function showLinkSelector(callbackId) {
             #wallabag-selector-modal input[type="text"] { all: initial; flex-grow: 1; padding: 6px; border: 1px solid #ccc; border-radius: 4px; font-family: -apple-system, sans-serif; font-size: 13px; }
         </style>
     `;
-    document.body.appendChild(modal);
+  document.body.appendChild(modal);
 
-    // --- The rest of the logic that wires up the UI is unchanged ---
-    const filterInput = modal.querySelector('#wallabag-filter');
-    const linksList = modal.querySelector('#wallabag-links-list');
-    
-    function updateCounter() {
-        const count = modal.querySelectorAll('.wallabag-link-item:not(.hidden) input:checked').length;
-        modal.querySelector('#wallabag-counter').textContent = `${count} link(s) selected`;
+  // --- The rest of the logic that wires up the UI is unchanged ---
+  const filterInput = modal.querySelector("#wallabag-filter");
+  const linksList = modal.querySelector("#wallabag-links-list");
+
+  function updateCounter() {
+    const count = modal.querySelectorAll(
+      ".wallabag-link-item:not(.hidden) input:checked"
+    ).length;
+    modal.querySelector(
+      "#wallabag-counter"
+    ).textContent = `${count} link(s) selected`;
+  }
+  function applyFilter() {
+    const filterText = filterInput.value;
+    const isExclusion = filterText.startsWith("-");
+    const regexText = isExclusion ? filterText.substring(1) : filterText;
+    let regex;
+    try {
+      regex = new RegExp(regexText, "i");
+    } catch (e) {
+      return;
     }
-    function applyFilter() {
-        const filterText = filterInput.value;
-        const isExclusion = filterText.startsWith('-');
-        const regexText = isExclusion ? filterText.substring(1) : filterText;
-        let regex;
-        try { regex = new RegExp(regexText, 'i'); } catch (e) { return; }
-        modal.querySelectorAll('.wallabag-link-item').forEach(item => {
-            const link = allLinks[item.dataset.index];
-            const textToMatch = `${link.title} ${link.url}`;
-            const matches = regex.test(textToMatch);
-            item.classList.toggle('hidden', isExclusion ? matches : !matches);
-        });
-        updateCounter();
-    }
-    
-    filterInput.addEventListener('input', applyFilter);
-    linksList.addEventListener('change', updateCounter);
-    modal.querySelector('#wallabag-close-btn').addEventListener('click', () => modal.remove());
-    modal.querySelector('#wallabag-select-all').addEventListener('click', () => {
-        modal.querySelectorAll('.wallabag-link-item:not(.hidden) input').forEach(cb => cb.checked = true);
-        updateCounter();
-    });
-    modal.querySelector('#wallabag-select-none').addEventListener('click', () => {
-        modal.querySelectorAll('.wallabag-link-item:not(.hidden) input').forEach(cb => cb.checked = false);
-        updateCounter();
-    });
-    modal.querySelector('#wallabag-save-btn').addEventListener('click', () => {
-        const selectedLinks = [];
-        modal.querySelectorAll('.wallabag-link-item:not(.hidden) input:checked').forEach(cb => {
-            selectedLinks.push(allLinks[cb.parentElement.dataset.index].url);
-        });
-        if (selectedLinks.length === 0) { alert("No links are selected."); return; }
-        modal.querySelector('#wallabag-save-btn').textContent = 'Saving...';
-        modal.querySelector('#wallabag-save-btn').disabled = true;
-       safari.extension.dispatchMessage(callbackId, {
-           urls: selectedLinks
-       });
-       modal.remove();
+    modal.querySelectorAll(".wallabag-link-item").forEach((item) => {
+      const link = allLinks[item.dataset.index];
+      const textToMatch = `${link.title} ${link.url}`;
+      const matches = regex.test(textToMatch);
+      item.classList.toggle("hidden", isExclusion ? matches : !matches);
     });
     updateCounter();
+  }
+
+  filterInput.addEventListener("input", applyFilter);
+  linksList.addEventListener("change", updateCounter);
+  modal
+    .querySelector("#wallabag-close-btn")
+    .addEventListener("click", () => modal.remove());
+  modal.querySelector("#wallabag-select-all").addEventListener("click", () => {
+    modal
+      .querySelectorAll(".wallabag-link-item:not(.hidden) input")
+      .forEach((cb) => (cb.checked = true));
+    updateCounter();
+  });
+  modal.querySelector("#wallabag-select-none").addEventListener("click", () => {
+    modal
+      .querySelectorAll(".wallabag-link-item:not(.hidden) input")
+      .forEach((cb) => (cb.checked = false));
+    updateCounter();
+  });
+  modal.querySelector("#wallabag-save-btn").addEventListener("click", () => {
+    const selectedLinks = [];
+    modal
+      .querySelectorAll(".wallabag-link-item:not(.hidden) input:checked")
+      .forEach((cb) => {
+        selectedLinks.push(allLinks[cb.parentElement.dataset.index].url);
+      });
+    if (selectedLinks.length === 0) {
+      alert("No links are selected.");
+      return;
+    }
+    modal.querySelector("#wallabag-save-btn").textContent = "Saving...";
+    modal.querySelector("#wallabag-save-btn").disabled = true;
+    safari.extension.dispatchMessage(callbackId, {
+      urls: selectedLinks,
+    });
+    modal.remove();
+  });
+  updateCounter();
 }

@@ -116,7 +116,7 @@
 		A77D2776281A791600D89E82 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		A77D2778281A804200D89E82 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		A782729B2E365D2D0017288B /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
-		A782729F2E365DA60017288B /* script.js */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
+		A782729F2E365DA60017288B /* script.js */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		A782C1F42DD0CCC6005F38B0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A7A706182E91B9B300C264F9 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
