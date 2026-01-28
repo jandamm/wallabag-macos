@@ -10,17 +10,19 @@ import Foundation
 public struct Website: Encodable {
 	public let url: URL
 	public let title: String?
+	public let content: String?
 	var tags: String?
 	public var archive: Archive = .unread
 	public var starred: Starred = .unstarred
 
 	public init(url: URL) {
-		self.init(url: url, title: nil)
+		self.init(url: url, title: nil, content: nil)
 	}
 
-	public init(url: URL, title: String?) {
+	public init(url: URL, title: String?, content: String?) {
 		self.url = url
 		self.title = title
+		self.content = content
 	}
 
 	public var allTags: [String] {

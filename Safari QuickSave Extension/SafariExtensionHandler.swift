@@ -9,6 +9,8 @@
 import SafariServices
 import Wallabag
 
+let defaults = UserDefaults(suiteName: AppCredentials.userDefaultsGroup)!
+
 class SafariExtensionHandler: SFSafariExtensionHandler {
 
 	// Create a shared instance so the popover can access its methods
@@ -18,7 +20,6 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 	override func popoverViewController() -> SFSafariExtensionViewController {
 		return PopoverViewController.shared
 	}
-
 
 	override func contextMenuItemSelected(withCommand command: String, in page: SFSafariPage, userInfo: [String : Any]? = nil) {
 		switch command {
@@ -63,7 +64,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 	}
 
 	func handleSaveCurrentPage(in page: SFSafariPage) {
-		getWebsite(of: page) { website in
+		getWebsite(of: page, getContentFromPage: defaults.bool(forKey: "getContentFromPage")) { website in
 			guard let website = website else { return }
 			self.save(website: website)
 		}
@@ -142,9 +143,20 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 		}
 	}
 
-	func getWebsite(of page: SFSafariPage, callback: @escaping (Website?) -> Void) {
-		page.getPropertiesWithCompletionHandler { properties in
-			callback(properties?.url.map { Website(url: $0, title: properties?.title) })
+	func getWebsite(of page: SFSafariPage, getContentFromPage: Bool, callback: @escaping (Website?) -> Void) {
+		if getContentFromPage {
+			// Store the content from Safari to Wallabag
+			sendWithCallback(to: page, name: "getContent") { res in
+				guard let dict = res as? [String: String], let url = dict["url"].flatMap(URL.init) else {
+					return self.getWebsite(of: page, getContentFromPage: false, callback: callback) // If it fails fallback to default.
+				}
+				callback(Website(url: url, title: dict["title"], content: dict["html"]))
+			}
+		} else {
+			// Default: Just get a link and let Wallabag handle it
+			page.getPropertiesWithCompletionHandler { properties in
+				callback(properties?.url.map(Website.init))
+			}
 		}
 	}
 }

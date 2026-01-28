@@ -12,6 +12,8 @@ import SwiftUI
 import Wallabag
 import UI
 
+let defaults = UserDefaults(suiteName: AppCredentials.userDefaultsGroup)!
+
 class ViewController: NSViewController {
 
 	@IBOutlet private var mainStackView: NSStackView!
@@ -23,6 +25,8 @@ class ViewController: NSViewController {
 	@IBOutlet private var usernameTextField: UI.TextField!
 	@IBOutlet private var passwordTextField: SecureTextField!
 	@IBOutlet private var validateCredentialsButton: NSButton!
+
+	@IBOutlet private var useWebsiteContentSwitch: NSSwitch!
 
 	@IBOutlet private var appNameLabel: NSTextField!
 
@@ -50,6 +54,8 @@ class ViewController: NSViewController {
 		self.usernameTextField.stringValue = credentials?.username ?? ""
 		self.passwordTextField.stringValue = ""
 
+		self.useWebsiteContentSwitch.state = defaults.bool(forKey: "getContentFromPage") ? .on : .off
+
 		API.refreshTokenIfNeeded(clearAuthOnError: false) { result in
 			DispatchQueue.main.async {
 				self.respondToAuthResponse(result)
@@ -67,6 +73,10 @@ class ViewController: NSViewController {
 					: "\(AppCredentials.appName)'s extension is currently off. You can turn it on in Safari Extensions preferences."
 			}
 		}
+	}
+
+	@IBAction private func toggleContentFromWebsite(_ sender: NSSwitch) {
+		defaults.set(sender.state == .on ? true : false, forKey: "getContentFromPage")
 	}
 
 	@IBAction private func validateCredentials(_ sender: NSButton?) {

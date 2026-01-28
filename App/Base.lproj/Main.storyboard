@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24412"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -99,57 +99,57 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="591"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="42" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLV-xE-AGT">
-                                <rect key="frame" x="0.0" y="34" width="480" height="337"/>
+                                <rect key="frame" x="0.0" y="34" width="480" height="512"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FGW-Lo-syq">
-                                        <rect key="frame" x="40" y="136" width="400" height="201"/>
+                                        <rect key="frame" x="40" y="292" width="400" height="220"/>
                                         <subviews>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KDN-Cn-8Tb">
-                                                <rect key="frame" x="110" y="185" width="180" height="16"/>
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KDN-Cn-8Tb">
+                                                <rect key="frame" x="110" y="204" width="180" height="16"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Please enter your credentials" id="ZU0-Vf-g5D">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GU1-U9-d86" customClass="TextField" customModule="UI">
-                                                <rect key="frame" x="0.0" y="154" width="400" height="21"/>
+                                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GU1-U9-d86" customClass="TextField" customModule="UI">
+                                                <rect key="frame" x="0.0" y="170" width="400" height="24"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Server URL" drawsBackground="YES" id="01u-6N-PO3">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NYQ-hR-3H1" customClass="TextField" customModule="UI">
-                                                <rect key="frame" x="0.0" y="123" width="400" height="21"/>
+                                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NYQ-hR-3H1" customClass="TextField" customModule="UI">
+                                                <rect key="frame" x="0.0" y="136" width="400" height="24"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Client ID" drawsBackground="YES" id="OeA-3x-7pd">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bXj-AR-gZt" customClass="TextField" customModule="UI">
-                                                <rect key="frame" x="0.0" y="92" width="400" height="21"/>
+                                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bXj-AR-gZt" customClass="TextField" customModule="UI">
+                                                <rect key="frame" x="0.0" y="102" width="400" height="24"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Client Secret" drawsBackground="YES" id="Ycr-aJ-Xhs">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField verticalHuggingPriority="750" contentType="username" translatesAutoresizingMaskIntoConstraints="NO" id="viF-ji-Gjg" customClass="TextField" customModule="UI">
-                                                <rect key="frame" x="0.0" y="61" width="400" height="21"/>
+                                            <textField focusRingType="none" verticalHuggingPriority="750" contentType="username" translatesAutoresizingMaskIntoConstraints="NO" id="viF-ji-Gjg" customClass="TextField" customModule="UI">
+                                                <rect key="frame" x="0.0" y="68" width="400" height="24"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Username" drawsBackground="YES" id="lQN-yp-j3Q">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <secureTextField verticalHuggingPriority="750" contentType="password" translatesAutoresizingMaskIntoConstraints="NO" id="dMW-fk-DUq" customClass="SecureTextField" customModule="UI">
-                                                <rect key="frame" x="0.0" y="30" width="400" height="21"/>
+                                            <secureTextField focusRingType="none" verticalHuggingPriority="750" contentType="password" translatesAutoresizingMaskIntoConstraints="NO" id="dMW-fk-DUq" customClass="SecureTextField" customModule="UI">
+                                                <rect key="frame" x="0.0" y="34" width="400" height="24"/>
                                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" usesSingleLineMode="YES" id="wNn-DC-Stg">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -160,7 +160,7 @@
                                                 </secureTextFieldCell>
                                             </secureTextField>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WkD-X8-ccz">
-                                                <rect key="frame" x="123" y="-7" width="155" height="32"/>
+                                                <rect key="frame" x="128" y="0.0" width="145" height="24"/>
                                                 <buttonCell key="cell" type="push" title="Validate Credentials" alternateTitle="Install" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingMiddle" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OkY-I7-6cE">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -192,8 +192,35 @@ DQ
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-ac-UZR">
-                                        <rect key="frame" x="38" y="62" width="404" height="32"/>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c9K-YG-rvr">
+                                        <rect key="frame" x="86" y="140" width="308" height="110"/>
+                                        <subviews>
+                                            <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="fMA-Ch-BtX">
+                                                <rect key="frame" x="0.0" y="43" width="54" height="24"/>
+                                                <connections>
+                                                    <action selector="toggleContentFromWebsite:" target="XfG-lQ-9wD" id="jXD-FR-ziH"/>
+                                                </connections>
+                                            </switch>
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yei-qc-Tho">
+                                                <rect key="frame" x="60" y="47" width="250" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="save website content displayed in Safari " id="QrO-zd-TJI">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-ac-UZR">
+                                        <rect key="frame" x="38" y="66" width="404" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="pZE-0p-Ce8"/>
                                         </constraints>
@@ -204,7 +231,7 @@ DQ
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ooh-eV-eLQ">
-                                        <rect key="frame" x="82" y="-7" width="316" height="32"/>
+                                        <rect key="frame" x="87" y="0.0" width="306" height="24"/>
                                         <buttonCell key="cell" type="push" title="Quit and Open Safari Extensions Preferences…" alternateTitle="Install" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingMiddle" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Srx-0j-A4D">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -221,8 +248,10 @@ DQ
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -245,6 +274,7 @@ DQ
                         <outlet property="mainStackView" destination="ZLV-xE-AGT" id="pWL-J6-rQI"/>
                         <outlet property="passwordTextField" destination="dMW-fk-DUq" id="Qkl-oQ-JKc"/>
                         <outlet property="serverTextField" destination="GU1-U9-d86" id="d7C-NK-sVT"/>
+                        <outlet property="useWebsiteContentSwitch" destination="fMA-Ch-BtX" id="oB8-xd-H8d"/>
                         <outlet property="usernameTextField" destination="viF-ji-Gjg" id="UMQ-Wr-qV4"/>
                         <outlet property="validateCredentialsButton" destination="WkD-X8-ccz" id="7ON-mL-Aan"/>
                     </connections>

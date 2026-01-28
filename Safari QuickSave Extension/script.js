@@ -28,6 +28,14 @@ function messageHandler(event) {
       showLinkSelector(event.message.callbackId);
       break;
 
+    case "getContent":
+      safari.extension.dispatchMessage(event.message.callbackId, {
+        url: document.location.href,
+        title: document.title.toString(),
+        content: document.body.innerHTML,
+      });
+      break;
+
     default:
       console.error("❌ Unknown Message:", event.name);
   }
