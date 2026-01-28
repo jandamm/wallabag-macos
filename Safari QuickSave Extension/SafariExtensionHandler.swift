@@ -21,41 +21,46 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 
 
 	override func contextMenuItemSelected(withCommand command: String, in page: SFSafariPage, userInfo: [String : Any]? = nil) {
-
-		// For "Save Page", the existing logic already handles feedback.
-		if command == "save-current-page" {
+		switch command {
+		case "save-current-page": // For "Save Page", the existing logic already handles feedback.
 			handleSaveCurrentPage(in: page)
-			return
-		}
-
-		// For the other two commands, we first need to get the user's credentials.
-		guard let credentials = API.jsCredentials else {
-			print("Wallabag Error: Not authenticated.")
-			updateToolbarBadge(with: "Login", autoClear: true) // Provide feedback if not logged in
-			return
-		}
-
-		// Now we handle each command and add the feedback.
-		if command == "save-linked-url" {
-			// Show "..." to indicate the action has started.
-			updateToolbarBadge(with: "...")
-			page.dispatchMessageToScript(withName: "saveLinkViaJavaScript", userInfo: credentials)
-
-			// Since we don't get a response from JS, we optimistically
-			// show "Ok" after a short delay, assuming it will succeed.
-			DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-				self.updateToolbarBadge(with: "Ok", autoClear: true)
+		case "save-linked-url":
+			sendWithCallback(to: page, name: "getLinkedURL") { raw in
+				guard let rawURL = (raw as? [String: String])?["url"], let url = URL(string: rawURL) else { return }
+				self.save(website: Website(url: url))
 			}
-
-		} else if command == "save-all-links" {
-			// Show a message to indicate the process is starting.
-			// The final confirmation will come from the JavaScript alert.
-			updateToolbarBadge(with: "Busy…", autoClear: true)
-			page.dispatchMessageToScript(withName: "showLinkSelectorUI", userInfo: credentials)
+		case "save-all-links":
+			sendWithCallback(to: page, name: "showLinkSelectorUI") { raw in
+				guard let rawURLs = (raw as? [String: [String]])?["urls"] else { return }
+				let urls = rawURLs.compactMap(URL.init(string:))
+				self.save(websites: urls.map(Website.init))
+			}
+		default:
+			print("Not implemented")
 		}
 	}
 
-	override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]? = nil) { }
+	override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]? = nil) {
+		//updateToolbarBadge(with: pendingCallbacks[messageName] == nil ? "no cb" : "has")
+		guard let callback = Self.pendingCallbacks.removeValue(forKey: messageName) else { return }
+		callback(userInfo)
+	}
+
+	private static var pendingCallbacks: [String: (Any?) -> Void] = [:]
+
+	// Usage in JS:
+	// safari.extension.dispatchMessage(event.message.callbackId, {
+	//   ...
+	// });
+	private func sendWithCallback(to page: SFSafariPage, name: String, userInfo: [String: Any] = [:], callback: @escaping (Any?) -> Void) {
+		let callbackId = UUID().uuidString
+		Self.pendingCallbacks[callbackId] = callback
+
+		var info = userInfo
+		info["callbackId"] = callbackId
+
+		page.dispatchMessageToScript(withName: name, userInfo: info)
+	}
 
 	func handleSaveCurrentPage(in page: SFSafariPage) {
 		getWebsite(of: page) { website in
@@ -65,13 +70,44 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 	}
 
 	func save(website: Website) {
-		updateToolbarBadge(with: "...")
-		API.save(website: website) { result in
-			self.handleSaveResponse(result: result)
+		save(websites: [website])
+	}
+
+	func save(websites: [Website]) {
+		guard !websites.isEmpty else { return }
+
+		let group = DispatchGroup()
+		var remaining = websites.count
+		var errors = 0
+		var result: Result<Void, API.Error>?
+
+		updateToolbarBadge(with: remaining == 1 ? "..." : "\(remaining)")
+
+		for website in websites {
+			group.enter()
+			API.save(website: website) { res in
+				remaining -= 1
+				if remaining > 0 {
+					self.updateToolbarBadge(with: "\(remaining)")
+				}
+
+				if result == nil || result?.isSuccess == true {
+					result = res // Prefer Errors over success
+				}
+				if result?.isSuccess == false {
+					errors += 1
+				}
+				group.leave()
+			}
+		}
+
+		group.notify(queue: .main) {
+			guard let result else { return }
+			self.handleSaveResponse(result: result, errorCount: errors)
 		}
 	}
 
-	func handleSaveResponse(result: Result<Void, API.Error>) {
+	func handleSaveResponse(result: Result<Void, API.Error>, errorCount: Int) {
 		switch result {
 		case .success:
 			updateToolbarBadge(with: "Ok", autoClear: true)
@@ -81,7 +117,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 			}
 			fallthrough
 		case .failure:
-			updateToolbarBadge(with: "Error", autoClear: true)
+			updateToolbarBadge(with: errorCount > 1 ? "E: #\(errorCount)" : "Error", autoClear: true)
 		}
 	}
 

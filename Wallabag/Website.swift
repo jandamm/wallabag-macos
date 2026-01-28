@@ -14,6 +14,10 @@ public struct Website: Encodable {
 	public var archive: Archive = .unread
 	public var starred: Starred = .unstarred
 
+	public init(url: URL) {
+		self.init(url: url, title: nil)
+	}
+
 	public init(url: URL, title: String?) {
 		self.url = url
 		self.title = title

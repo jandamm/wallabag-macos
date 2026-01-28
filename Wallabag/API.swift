@@ -75,14 +75,6 @@ public extension API {
 	static func openApp() {
 		NSWorkspace.shared.open(URL(string: "wallabag://")!)
 	}
-
-	static var jsCredentials: [String: String]? {
-		guard let oAuth, !oAuth.isExpired else { return nil }
-		return [
-			"token": oAuth.token.access_token,
-			"serverURL": oAuth.credentials.server.absoluteString
-		]
-	}
 }
 
 extension API {

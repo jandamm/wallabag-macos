@@ -13,43 +13,24 @@ window.addEventListener('contextmenu', function(event) {
 safari.self.addEventListener("message", messageHandler);
 
 function messageHandler(event) {
-    if (event.name === "saveLinkViaJavaScript") {
-        setTimeout(function() {
-            if (!lastClickedLinkURL) {
-                console.error("Wallabag Error: No valid link was found.");
-                return;
-            }
-            saveUrlToWallabag(lastClickedLinkURL, event.message.token, event.message.serverURL);
-        }, 100);
-    }
-    
-    if (event.name === "showLinkSelectorUI") {
-        showLinkSelector(event.message.token, event.message.serverURL);
-    }
-}
+    switch(event.name) {
+        case "getLinkedURL":
+            safari.extension.dispatchMessage(event.message.callbackId, {
+                url: lastClickedLinkURL.toString()
+            });
+            break;
 
-function saveUrlToWallabag(urlToSave, token, serverURL, silentMode = false) {
-    return fetch(serverURL + "/api/entries.json", {
-        method: 'POST',
-        headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json', },
-        body: JSON.stringify({ 'url': urlToSave })
-    })
-    .then(response => {
-        if (!response.ok && !silentMode) {
-            alert(`Wallabag Error: Failed to save ${urlToSave}. Status: ${response.status}`);
-        }
-        return response.ok;
-    })
-    .catch(error => {
-        if (!silentMode) {
-            alert(`Wallabag Network Error for ${urlToSave}.\n\n${error}`);
-        }
-        return false;
-    });
+        case "showLinkSelectorUI":
+            showLinkSelector(event.message.callbackId);
+            break;
+
+        default:
+            console.error("❌ Unknown Message:", event.name);
+    }
 }
 
 // The UI logic with updated, more robust CSS.
-function showLinkSelector(token, serverURL) {
+function showLinkSelector(callbackId) {
     const allLinks = [];
     document.querySelectorAll('a[href]').forEach(function(a) {
         const absoluteUrl = new URL(a.href, document.baseURI).href;
@@ -162,12 +143,10 @@ function showLinkSelector(token, serverURL) {
         if (selectedLinks.length === 0) { alert("No links are selected."); return; }
         modal.querySelector('#wallabag-save-btn').textContent = 'Saving...';
         modal.querySelector('#wallabag-save-btn').disabled = true;
-        const savePromises = selectedLinks.map(url => saveUrlToWallabag(url, token, serverURL, true));
-        Promise.all(savePromises).then(results => {
-            const successfulSaves = results.filter(success => success).length;
-            alert(`Finished! Successfully saved ${successfulSaves} out of ${selectedLinks.length} links.`);
-            modal.remove();
-        });
+       safari.extension.dispatchMessage(callbackId, {
+           urls: selectedLinks
+       });
+       modal.remove();
     });
     updateCounter();
 }
