@@ -150,7 +150,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 				guard let dict = res as? [String: String], let url = dict["url"].flatMap(URL.init) else {
 					return self.getWebsite(of: page, getContentFromPage: false, callback: callback) // If it fails fallback to default.
 				}
-				callback(Website(url: url, title: dict["title"], content: dict["html"]))
+				callback(Website(url: url, title: dict["title"], content: dict["content"]))
 			}
 		} else {
 			// Default: Just get a link and let Wallabag handle it
