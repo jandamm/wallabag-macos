@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,9 @@
 		A77D2777281A791600D89E82 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D2776281A791600D89E82 /* Tip.swift */; };
 		A782729D2E365D2D0017288B /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782729B2E365D2D0017288B /* PopoverViewController.swift */; };
 		A78272A02E365DA60017288B /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = A782729F2E365DA60017288B /* script.js */; };
+		A787E0692F753E1000D8AF87 /* Share Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A787E05D2F753E1000D8AF87 /* Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A787E06E2F753E3300D8AF87 /* libWallabagAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */; };
+		A787E0722F753E3900D8AF87 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = A787E0712F753E3900D8AF87 /* KeychainAccess */; };
 		A7A706192E91B9B300C264F9 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = A7A706182E91B9B300C264F9 /* AppIcon.icon */; };
 		A7B43DC9281ABA4900B4CDA7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */; };
 		A7C5477B2BB2E19B002450E7 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C547792BB2E183002450E7 /* Statistics.swift */; };
@@ -50,6 +53,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A787E0672F753E1000D8AF87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD6AE80F25BB755D00649EAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A787E05C2F753E1000D8AF87;
+			remoteInfo = "Share Extension";
+		};
+		A787E06F2F753E3300D8AF87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD6AE80F25BB755D00649EAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD74F5F625BCC36D009A12C1;
+			remoteInfo = WallabagAPI;
+		};
 		FD36332425C57A66004AA740 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FD6AE80F25BB755D00649EAA /* Project object */;
@@ -105,6 +122,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				FD6AE84025BB755E00649EAA /* Safari Extension.appex in Embed Foundation Extensions */,
+				A787E0692F753E1000D8AF87 /* Share Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +136,7 @@
 		A782729B2E365D2D0017288B /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		A782729F2E365DA60017288B /* script.js */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		A782C1F42DD0CCC6005F38B0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A787E05D2F753E1000D8AF87 /* Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A706182E91B9B300C264F9 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		A7B43DC8281ABA4900B4CDA7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A7C547792BB2E183002450E7 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
@@ -159,7 +178,30 @@
 		FD9EE3B225BD86EC004F3F87 /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A787E06C2F753E1000D8AF87 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A787E05C2F753E1000D8AF87 /* Share Extension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A787E05E2F753E1000D8AF87 /* Share Extension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A787E06C2F753E1000D8AF87 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Share Extension"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		A787E05A2F753E1000D8AF87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A787E0722F753E3900D8AF87 /* KeychainAccess in Frameworks */,
+				A787E06E2F753E3300D8AF87 /* libWallabagAPI.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD3632EE25C575EF004AA740 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +267,7 @@
 				FD494C6A266AC42B00EE5C4A /* AppCredentials.swift */,
 				FD6AE81925BB755D00649EAA /* App */,
 				FD6AE84625BB755E00649EAA /* Safari QuickSave Extension */,
+				A787E05E2F753E1000D8AF87 /* Share Extension */,
 				FD74F5F825BCC36D009A12C1 /* Wallabag */,
 				FD6AE82C25BB755E00649EAA /* AppTests */,
 				FD3632F125C575EF004AA740 /* UI */,
@@ -241,6 +284,7 @@
 				FD6AE83F25BB755E00649EAA /* Safari Extension.appex */,
 				FD74F5F725BCC36D009A12C1 /* libWallabagAPI.a */,
 				FD3632F025C575EF004AA740 /* libUI.a */,
+				A787E05D2F753E1000D8AF87 /* Share Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -343,6 +387,30 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A787E05C2F753E1000D8AF87 /* Share Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A787E06D2F753E1000D8AF87 /* Build configuration list for PBXNativeTarget "Share Extension" */;
+			buildPhases = (
+				A787E0592F753E1000D8AF87 /* Sources */,
+				A787E05A2F753E1000D8AF87 /* Frameworks */,
+				A787E05B2F753E1000D8AF87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A787E0702F753E3300D8AF87 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A787E05E2F753E1000D8AF87 /* Share Extension */,
+			);
+			name = "Share Extension";
+			packageProductDependencies = (
+				A787E0712F753E3900D8AF87 /* KeychainAccess */,
+			);
+			productName = "Share Extension";
+			productReference = A787E05D2F753E1000D8AF87 /* Share Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FD3632EF25C575EF004AA740 /* UI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD3632F825C575EF004AA740 /* Build configuration list for PBXNativeTarget "UI" */;
@@ -377,6 +445,7 @@
 				FD6AE84225BB755E00649EAA /* PBXTargetDependency */,
 				FD74F60D25BCC3A1009A12C1 /* PBXTargetDependency */,
 				FD36332525C57A66004AA740 /* PBXTargetDependency */,
+				A787E0682F753E1000D8AF87 /* PBXTargetDependency */,
 			);
 			name = Wallabag;
 			packageProductDependencies = (
@@ -453,9 +522,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1220;
+				LastSwiftUpdateCheck = 2630;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					A787E05C2F753E1000D8AF87 = {
+						CreatedOnToolsVersion = 26.3;
+					};
 					FD3632EF25C575EF004AA740 = {
 						CreatedOnToolsVersion = 12.2;
 						LastSwiftMigration = 1220;
@@ -496,6 +568,7 @@
 				FD6AE81625BB755D00649EAA /* Wallabag */,
 				FD6AE82825BB755E00649EAA /* WallabagTests */,
 				FD6AE83E25BB755E00649EAA /* Safari Extension */,
+				A787E05C2F753E1000D8AF87 /* Share Extension */,
 				FD74F5F625BCC36D009A12C1 /* WallabagAPI */,
 				FD3632EF25C575EF004AA740 /* UI */,
 			);
@@ -503,6 +576,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A787E05B2F753E1000D8AF87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD6AE81525BB755D00649EAA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -554,6 +634,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A787E0592F753E1000D8AF87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD3632ED25C575EF004AA740 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -616,6 +703,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A787E0682F753E1000D8AF87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A787E05C2F753E1000D8AF87 /* Share Extension */;
+			targetProxy = A787E0672F753E1000D8AF87 /* PBXContainerItemProxy */;
+		};
+		A787E0702F753E3300D8AF87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD74F5F625BCC36D009A12C1 /* WallabagAPI */;
+			targetProxy = A787E06F2F753E3300D8AF87 /* PBXContainerItemProxy */;
+		};
 		FD36332525C57A66004AA740 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FD3632EF25C575EF004AA740 /* UI */;
@@ -659,6 +756,107 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A787E06A2F753E1000D8AF87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "Share Extension/Share Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TCLF98BX7;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Share Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Wallabag;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 2026.3;
+				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A787E06B2F753E1000D8AF87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "Share Extension/Share Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TCLF98BX7;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Share Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Wallabag;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 2026.3;
+				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.wallabagmac.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		FD3632F625C575EF004AA740 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1021,6 +1219,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A787E06D2F753E1000D8AF87 /* Build configuration list for PBXNativeTarget "Share Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A787E06A2F753E1000D8AF87 /* Debug */,
+				A787E06B2F753E1000D8AF87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FD3632F825C575EF004AA740 /* Build configuration list for PBXNativeTarget "UI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1101,6 +1308,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A7C547872BB36FA9002450E7 /* XCRemoteSwiftPackageReference "SwiftClient" */;
 			productName = TelemetryDeck;
+		};
+		A787E0712F753E3900D8AF87 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD1DA42A25BCA8BB0009CB0E /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 		FD74F5A325BCC16A009A12C1 /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
