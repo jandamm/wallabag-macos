@@ -108,11 +108,20 @@ extension API {
 			request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 			request.httpBody = try encoder.encode(oAuthRequest)
 
-			session.dataTask(with: request) { data, _, error in
+			session.dataTask(with: request) { data, response, error in
 				do {
-					guard let data else {
-						throw error ?? NSError(domain: "unknown", code: -1)
+					if let error { throw error }
+					guard let data else { throw OAuthRequestError.noResponseBody }
+
+					let status = (response as? HTTPURLResponse)?.statusCode ?? 0
+					if !(200..<300).contains(status) {
+						// Parse the Wallabag/OAuth2 error envelope when present; otherwise
+						// return the raw body so the UI can show what the server actually said.
+						let parsed = try? decoder.decode(OAuthServerError.self, from: data)
+						let body = String(data: data, encoding: .utf8) ?? "<non-utf8 body>"
+						throw OAuthRequestError.server(status: status, code: parsed?.error, description: parsed?.error_description ?? body)
 					}
+
 					let newAuth = OAuth(
 						credentials: credentials,
 						token: try decoder.decode(OAuth.Token.self, from: data),
@@ -129,6 +138,26 @@ extension API {
 			}.resume()
 		} catch {
 			completion(.failure(error))
+		}
+	}
+}
+
+private struct OAuthServerError: Decodable {
+	let error: String
+	let error_description: String?
+}
+
+public enum OAuthRequestError: LocalizedError {
+	case noResponseBody
+	case server(status: Int, code: String?, description: String)
+
+	public var errorDescription: String? {
+		switch self {
+		case .noResponseBody:
+			return "The server responded but sent no body."
+		case .server(let status, let code, let description):
+			if let code { return "HTTP \(status) — \(code): \(description)" }
+			return "HTTP \(status) — \(description)"
 		}
 	}
 }
