@@ -79,7 +79,7 @@ public extension API {
 
 extension API {
 	// TODO: Improve logic and add caching?
-	static var oAuth: OAuth? {
+	public static var oAuth: OAuth? {
 		get {
 			(try? keychain.getData(OAuth.key))
 				.flatMap { try? decoder.decode(OAuth.self, from: $0) }
