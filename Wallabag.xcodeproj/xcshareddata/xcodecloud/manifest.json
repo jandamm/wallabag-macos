@@ -1,0 +1,9 @@
+{
+  "id" : "0ddfff5a-6404-4ff7-8ff5-2d8356b7eb02",
+  "targets" : [
+    {
+      "id" : "6002A805-CED3-414A-92A4-34477F42CF15",
+      "name" : "Wallabag QuickSave"
+    }
+  ]
+}
